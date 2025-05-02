@@ -11,15 +11,17 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
+  background-color: #f9f9f9;
 }
 
 a {
-  color: #0563bb;
+  color: #0078d4;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-  color: #067ded;
+  color: #005fa3;
   text-decoration: none;
 }
 
@@ -42,11 +44,12 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #0563bb;
+  background: #0078d4;
   width: 40px;
   height: 40px;
   border-radius: 50px;
   transition: all 0.4s;
+  box-shadow: 0 2px 15px rgba(0, 120, 212, 0.2);
 }
 
 .back-to-top i {
@@ -56,7 +59,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #0678e3;
+  background: #005fa3;
   color: #fff;
 }
 
@@ -297,7 +300,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -310,19 +313,22 @@ h6 {
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
-  color: #45505b;
+  color: #2d2d2d;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 #hero p {
-  color: #45505b;
+  color: #2d2d2d;
   margin: 15px 0 0 0;
-  font-size: 26px;
+  font-size: 28px;
   font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
-  color: #0563bb;
+  color: #0078d4;
   letter-spacing: 1px;
+  border-bottom: 2px solid #0078d4;
+  padding-bottom: 4px;
 }
 
 #hero .social-links {
@@ -330,16 +336,17 @@ h6 {
 }
 
 #hero .social-links a {
-  font-size: 24px;
+  font-size: 26px;
   display: inline-block;
-  color: #45505b;
+  color: #2d2d2d;
   line-height: 1;
-  margin-right: 20px;
+  margin-right: 25px;
   transition: 0.3s;
 }
 
 #hero .social-links a:hover {
-  color: #0563bb;
+  color: #0078d4;
+  transform: translateY(-3px);
 }
 
 @media (max-width: 992px) {
@@ -363,23 +370,23 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 70px 0;
   overflow: hidden;
 }
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #45505b;
+  color: #2d2d2d;
 }
 
 .section-title h2::before {
@@ -399,22 +406,53 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #0563bb;
+  background: #0078d4;
   bottom: 0;
   left: calc(50% - 20px);
 }
 
 .section-title p {
   margin-bottom: 0;
+  font-size: 18px;
+  color: #505050;
 }
 
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
 .about .content h3 {
   font-weight: 700;
-  font-size: 26px;
-  color: #728394;
+  font-size: 28px;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.about .content h3:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #0078d4;
+  bottom: 0;
+  left: 0;
+}
+
+.about .content img {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.about .content img:hover {
+  transform: scale(1.02);
 }
 
 .about .content ul {
@@ -430,17 +468,22 @@ section {
 
 .about .content ul strong {
   margin-right: 10px;
+  font-weight: 600;
+  color: #2d2d2d;
 }
 
 .about .content ul i {
-  font-size: 16px;
+  font-size: 18px;
   margin-right: 5px;
-  color: #0563bb;
+  color: #0078d4;
   line-height: 0;
 }
 
-.about .content p:last-child {
-  margin-bottom: 0;
+.about .content p {
+  margin-bottom: 20px;
+  color: #505050;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 /*--------------------------------------------------------------
@@ -486,13 +529,14 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
   display: block;
   background: none;
   border-radius: 0;
+  margin-bottom: 30px;
 }
 
 .skills .progress .skill {
@@ -502,7 +546,7 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #45505b;
+  color: #2d2d2d;
 }
 
 .skills .progress .skill .val {
@@ -511,51 +555,131 @@ section {
 }
 
 .skills .progress-bar-wrap {
-  background: #f2f3f5;
+  background: #e9ecef;
+  height: 10px;
+  border-radius: 5px;
 }
 
 .skills .progress-bar {
   width: 1px;
   height: 10px;
-  transition: 0.9s;
-  background-color: #0563bb;
+  transition: 1s;
+  background-color: #0078d4;
+  border-radius: 5px;
+}
+
+.skills .skill-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.skills .skill-box:hover {
+  box-shadow: 0 5px 25px rgba(0, 120, 212, 0.15);
+  transform: translateY(-3px);
+}
+
+.skills .skill-box h4 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #2d2d2d;
+  display: flex;
+  align-items: center;
+}
+
+.skills .skill-box p {
+  font-size: 14px;
+  color: #505050;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.skills .additional-skills {
+  transition: all 0.3s ease;
+}
+
+.skills .additional-skills:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skills .additional-skills h4 {
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.skills .badge {
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: 1px solid #e9ecef;
+  display: inline-block;
+}
+
+.skills .badge:hover {
+  background-color: #0078d4 !important;
+  color: #fff !important;
+  transform: translateY(-2px);
 }
 
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
 .resume .resume-title {
-  font-size: 26px;
+  color: #2d2d2d;
   font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #45505b;
+  margin-bottom: 30px;
+  font-size: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.resume .resume-title:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #0078d4;
+  bottom: 0;
+  left: 0;
 }
 
 .resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid #0563bb;
   position: relative;
+  background: #fff;
+  padding: 25px;
+  border-left: 2px solid #0078d4;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.resume .resume-item:hover {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 }
 
 .resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
+  color: #0078d4;
+  font-size: 20px;
   font-weight: 600;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #0563bb;
   margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #f7f8f9;
-  padding: 5px 15px;
+  background: #f0f5fa;
+  padding: 8px 16px;
   display: inline-block;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #2d2d2d;
+  border-radius: 4px;
 }
 
 .resume .resume-item ul {
@@ -563,7 +687,9 @@ section {
 }
 
 .resume .resume-item ul li {
-  padding-bottom: 10px;
+  padding-bottom: 12px;
+  position: relative;
+  color: #505050;
 }
 
 .resume .resume-item:last-child {
@@ -577,9 +703,9 @@ section {
   height: 16px;
   border-radius: 50px;
   left: -9px;
-  top: 0;
+  top: 30px;
   background: #fff;
-  border: 2px solid #0563bb;
+  border: 2px solid #0078d4;
 }
 
 /*--------------------------------------------------------------
@@ -1172,58 +1298,125 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #f7f8f9;
-  color: #45505b;
-  font-size: 14px;
+  background: #f0f5fa;
+  color: #2d2d2d;
+  font-size: 15px;
   text-align: center;
-  padding: 30px 0;
+  padding: 50px 0 30px 0;
+  box-shadow: 0 -5px 10px rgba(0,0,0,0.05);
 }
 
 #footer h3 {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 700;
   position: relative;
   font-family: "Poppins", sans-serif;
   padding: 0;
-  margin: 0 0 15px 0;
+  margin: 0 0 20px 0;
+  color: #2d2d2d;
 }
 
 #footer p {
-  font-size: 15;
+  font-size: 17px;
   font-style: italic;
   padding: 0;
-  margin: 0 0 40px 0;
+  margin: 0 0 30px 0;
 }
 
 #footer .social-links {
-  margin: 0 0 40px 0;
+  margin: 0 0 30px 0;
 }
 
 #footer .social-links a {
-  font-size: 18px;
+  font-size: 20px;
   display: inline-block;
-  background: #0563bb;
+  background: #0078d4;
   color: #fff;
   line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
+  padding: 10px 0;
+  margin-right: 8px;
   border-radius: 50%;
   text-align: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0,120,212,0.2);
 }
 
 #footer .social-links a:hover {
-  background: #0678e3;
+  background: #005fa3;
   color: #fff;
-  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+#footer .email-contact .btn {
+  padding: 10px 25px;
+  border-radius: 30px;
+  color: #0078d4;
+  border: 2px solid #0078d4;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#footer .email-contact .btn:hover {
+  background: #0078d4;
+  color: #fff;
 }
 
 #footer .copyright {
-  margin: 0 0 5px 0;
+  margin: 20px 0 0 0;
+  color: #6c757d;
 }
 
-#footer .credits {
-  font-size: 13px;
+/*--------------------------------------------------------------
+# Interests Section
+--------------------------------------------------------------*/
+#interests {
+  background-color: #f5f8fd;
+  padding: 80px 0;
+}
+
+#interests .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#interests .icon-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 120, 212, 0.15);
+}
+
+#interests .icon-box i {
+  font-size: 32px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#interests .icon-box h4 {
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+  font-size: 20px;
+  color: #2d2d2d;
+}
+
+#interests .icon-box p {
+  font-size: 15px;
+  color: #505050;
+  margin: 0;
+  line-height: 1.6;
 }
