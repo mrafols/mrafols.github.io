@@ -653,11 +653,14 @@ section {
   position: relative;
   background: #fff;
   padding: 25px;
+  padding-left: 30px; 
   border-left: 2px solid #0078d4;
   border-radius: 0 8px 8px 0;
   margin-bottom: 30px;
+  margin-left: 0;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  overflow: visible;
 }
 
 .resume .resume-item:hover {
