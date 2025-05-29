@@ -18,15 +18,18 @@ const translations = {        'message-placeholder': 'Cuéntame sobre tu proyect
         'experience-passion': 'Mi pasión por la tecnología me ha llevado a trabajar en empresas innovadoras como Social Point, Incubio, y Qustodio, donde he gestionado infraestructuras que soportan millones de usuarios. También tengo experiencia docente, habiendo sido profesor en Monlau y la UPC.',
         'skills-title': 'Habilidades Técnicas',
         'view-experience': 'Ver Experiencia Completa',
-        'contact-me': 'Contáctame',
+        'contact-me': 'Contáctame',        // Personal Information
+        'birthday': 'Cumpleaños:',
+        'website': 'Sitio Web:',
+        'city': 'Ciudad:',
+        'age': 'Edad:',
+        'degree': 'Titulación:',
+        'email': 'Email:',
         
-        // Personal Information
-        'birthday': 'Cumpleaños',
-        'website': 'Sitio Web',
-        'city': 'Ciudad',
-        'age': 'Edad',
-        'degree': 'Titulación',
-        'email': 'Email',
+        // Personal Values
+        'birthday-value': '21 Diciembre 1986',
+        'city-value': 'Menorca, España',
+        'degree-value': 'Interacción Multimedia y Digital',
         
         // Skills
         'cloud-infrastructure': 'Infraestructura Cloud',
@@ -147,15 +150,18 @@ const translations = {        'message-placeholder': 'Cuéntame sobre tu proyect
         'experience-passion': 'My passion for technology has led me to work at innovative companies like Social Point, Incubio, and Qustodio, where I have managed infrastructures supporting millions of users. I also have teaching experience, having been a professor at Monlau and UPC.',
         'skills-title': 'Technical Skills',
         'view-experience': 'View Full Experience',
-        'contact-me': 'Contact Me',
+        'contact-me': 'Contact Me',          // Personal Information
+        'birthday': 'Birthday:',
+        'website': 'Website:',
+        'city': 'City:',
+        'age': 'Age:',
+        'degree': 'Degree:',
+        'email': 'Email:',
         
-        // Personal Information
-        'birthday': 'Birthday',
-        'website': 'Website',
-        'city': 'City',
-        'age': 'Age',
-        'degree': 'Degree',
-        'email': 'Email',
+        // Personal Values
+        'birthday-value': '21 December 1986',
+        'city-value': 'Menorca, Spain',
+        'degree-value': 'Multimedia & Digital Interaction',
         
         // Skills
         'cloud-infrastructure': 'Cloud Infrastructure',
