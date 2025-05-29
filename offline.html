@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - Marc Ràfols Portfolio</title>
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0c77f2">
+  
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/img/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" href="/assets/img/icon-192x192.png">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    body {
+      font-family: "Spline Sans", "Noto Sans", sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen flex items-center justify-center">
+  <div class="max-w-lg mx-auto text-center px-4">
+    <div class="mb-8">
+      <svg class="h-16 w-16 text-[#0c77f2] mx-auto mb-4" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_6_330)">
+          <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath>
+        </defs>
+      </svg>
+      <h1 class="text-3xl font-bold text-black mb-2">You're Offline</h1>
+      <p class="text-gray-600 mb-6">No internet connection detected. Some content may not be available.</p>
+    </div>
+    
+    <div class="bg-gray-50 rounded-xl p-6 mb-6">
+      <h2 class="text-xl font-semibold text-black mb-3">What you can still do:</h2>
+      <ul class="text-left space-y-2 text-gray-700">
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-[#0c77f2] rounded-full"></span>
+          Browse cached pages
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-[#0c77f2] rounded-full"></span>
+          View my experience and skills
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-[#0c77f2] rounded-full"></span>
+          Save contact form (will send when online)
+        </li>
+      </ul>
+    </div>
+    
+    <div class="space-y-4">
+      <button onclick="location.reload()" 
+              class="w-full bg-[#0c77f2] text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors">
+        Try Again
+      </button>
+      
+      <div class="flex gap-4">
+        <a href="/index.html" 
+           class="flex-1 bg-gray-100 text-black py-3 px-6 rounded-lg font-medium hover:bg-gray-200 transition-colors text-center">
+          Home
+        </a>
+        <a href="/experience.html" 
+           class="flex-1 bg-gray-100 text-black py-3 px-6 rounded-lg font-medium hover:bg-gray-200 transition-colors text-center">
+          Experience
+        </a>
+      </div>
+    </div>
+    
+    <p class="text-sm text-gray-500 mt-8">
+      Marc Ràfols - DevOps & Site Reliability Engineer
+    </p>
+  </div>
+</body>
+</html>

@@ -1,429 +1,281 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Marc Ràfols Ibáñez | DevOps Engineer & SRE</title>
-  <meta content="Professional with over 15 years of experience in infrastructure, DevOps, SRE and technical training" name="description">
-  <meta content="devops, sre, site reliability engineer, cloud, aws, terraform, instructor, serverless computing" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+<html><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Marc Ràfols - Site Reliability Engineer y DevOps con más de 15 años de experiencia en infraestructura cloud, automatización y arquitecturas escalables.">
+<meta name="keywords" content="DevOps, Site Reliability Engineer, SRE, Cloud Infrastructure, AWS, Azure, Terraform, Kubernetes, Docker">
+<meta name="author" content="Marc Ràfols Ibáñez">
+<meta property="og:title" content="Marc Ràfols - Site Reliability Engineer | DevOps Portfolio">
+<meta property="og:description" content="Portfolio profesional de Marc Ràfols, especialista en infraestructura cloud, DevOps y arquitecturas escalables.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mrafols.github.io">
+<meta property="og:image" content="https://mrafols.github.io/assets/img/profile-img.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marc Ràfols - Site Reliability Engineer | DevOps">
+<meta name="twitter:description" content="Portfolio profesional especializado en infraestructura cloud y DevOps.">
+<meta name="twitter:image" content="https://mrafols.github.io/assets/img/profile-img.jpg">
+<link rel="canonical" href="https://mrafols.github.io">
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Spline+Sans:wght@400;500;600;700&text=Marc%20R%C3%A0fols%20Portfolio%20Site%20Reliability%20Engineer%20DevOps" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Spline+Sans:wght@400;500;600;700"/></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Icons&text=cake%2Bpublic%2Blocation_on%2Bcalendar_today%2Bschool%2Bemail%2Bcloud%2Bbuild%2Bmonitoring%2Bdeveloper_board%2Bcode%2Bsync%2Bwork" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons"/></noscript>
+<title>Marc Ràfols - Portfolio</title>
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<!-- PWA Manifest -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c77f2">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Marc Ràfols Portfolio">
+<link rel="apple-touch-icon" href="/assets/img/icon-192x192.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/assets/img/apple-touch-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+.language-switcher button {
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 6px;
+  min-width: 40px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.language-switcher button.active {
+  background-color: #0c77f2;
+  color: white;
+  box-shadow: 0 2px 4px rgba(12, 119, 242, 0.3);
+}
+.language-switcher button:not(.active):hover {
+  background-color: #f3f4f6;
+  color: #0c77f2;
+}
+.language-switcher {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Focus visible for better keyboard navigation */
+.focus-visible:focus {
+  outline: 2px solid #0c77f2;
+  outline-offset: 2px;
+}
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #0c77f2;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+}
+.skip-link:focus {
+  top: 6px;
+}
+</style>
 </head>
-
-<body>
-
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
-
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Marc Ràfols Ibáñez</h1>
-      <p>I'm a <span class="typed" data-typed-items="DevOps Engineer,Site Reliability Engineer,Cloud Specialist,Serverless Computing Expert,Azure Instructor"></span></p>
-      <div class="social-links">
-        <a href="https://github.com/mrafols" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-        <a href="https://www.linkedin.com/in/marcrafols/" class="linkedin" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://twitter.com/marknes86" class="twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
-      </div>
+<body class="bg-white">
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex flex-col sm:flex-row items-center justify-between border-b border-solid border-b-[#e5e7eb] px-4 sm:px-10 py-4 sm:py-5 gap-4 sm:gap-0" role="banner">
+  <div class="flex items-center gap-3 sm:gap-4 text-black">
+    <svg class="h-6 w-6 sm:h-8 sm:w-8 text-[#0c77f2]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g clip-path="url(#clip0_6_330)">
+        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+      </g>
+      <defs>
+        <clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath>
+      </defs>
+    </svg>
+    <h1 class="text-lg sm:text-xl font-bold tracking-[-0.015em] text-black" data-translate="portfolio">Marc Portfolio</h1>
+  </div>
+  <nav class="flex items-center gap-3 sm:gap-6" role="navigation" aria-label="Navegación principal">    <!-- Language Switcher -->
+    <div class="language-switcher flex rounded-lg overflow-hidden" role="group" aria-label="Selector de idioma">
+      <button data-lang="en" class="px-3 py-2 text-sm font-medium transition-all" aria-label="Switch to English" title="English">🇺🇸 EN</button>
+      <button data-lang="es" class="px-3 py-2 text-sm font-medium transition-all" aria-label="Cambiar a español" title="Español">🇪🇸 ES</button>
     </div>
-  </section><!-- End Hero -->
+    <a class="text-[#0c77f2] text-sm sm:text-base font-medium leading-normal" href="index.html" data-translate="about">About</a>
+    <a class="text-black hover:text-[#0c77f2] text-sm sm:text-base font-medium leading-normal transition-colors" href="experience.html" data-translate="experience">Experience</a>
+    <a class="text-black hover:text-[#0c77f2] text-sm sm:text-base font-medium leading-normal transition-colors" href="contact.html" data-translate="contact">Contact</a>
+    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 sm:size-10 border-2 border-[#0c77f2]" style='background-image: url("/assets/img/profile-img.jpg");' loading="lazy" aria-label="Foto de perfil de Marc Ràfols"></div>
+  </nav>
+</header>
 
-  <main id="main">
+<main class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-4 sm:py-8 lg:py-12" role="main" id="main-content">
+<div class="layout-content-container flex flex-col max-w-4xl flex-1">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row gap-6 md:gap-12 items-center md:items-start p-2 sm:p-4 @container" aria-labelledby="hero-title">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-36 w-36 sm:min-h-40 sm:w-40 md:min-h-48 md:w-48 shadow-lg border-4 border-[#e5e7eb]" style='background-image: url("/assets/img/profile-img.jpg");' loading="lazy" role="img" aria-label="Foto de perfil de Marc Ràfols"></div>
+<div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
+<h2 class="text-black text-3xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight" id="hero-title" data-translate="hero-title">Hi, I'm Marc</h2>
+<p class="text-gray-700 text-lg sm:text-lg md:text-xl font-medium" data-translate="hero-subtitle">Site Reliability Engineer | DevOps</p>
+<p class="text-gray-600 text-base sm:text-base font-normal" data-translate="hero-description">Specialized in cloud infrastructure, automation, and scalable architectures. With over 15 years of experience in technology.</p>
+</div>
+</section>
 
-        <div class="section-title">
-          <h2>About</h2>
-
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid"  alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>DevOps Engineer, SRE, Cloud Specialist &amp; Azure Instructor</h3>
-            <br>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>21 December 1986</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.marcrafols.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Menorca, Spain</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>38</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Multimedia & Digital Interaction</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><a href="mailto:marc@marcrafols.com">marc@marcrafols.com</a></span></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-12" style="text-align: justify;">
-              <p>I am a professional with over 15 years of experience in infrastructure, DevOps, Site Reliability Engineering (SRE), and technical training. With a solid background in agile software development, continuous integration and deployment, and cloud computing, I have a proven track record of using technology to drive innovation and improve collaboration.</p>
-              <p>As a passionate advocate for leveraging technology to enhance education and business growth, I stay up-to-date with the latest industry practices and technologies. I am dedicated to teaching and mentoring others to help them reach their full potential and achieve their professional goals.</p>
-              <p>With my extensive knowledge and experience in AWS, Azure, Terraform, Serverless Computing, and CI/CD, I can deliver exceptional results and add value to any project or team. Whether it's improving system performance and reliability, managing infrastructure as code, or collaborating with development teams to support deployment and scalability, I am committed to delivering outstanding outcomes.</p>
-            </div>
-          </div>
-        </div>
-          
-      </div>
-    </section><!-- End About Section -->
-    <section id="interests">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Interests</h2>
-          <p>Professional and personal areas of interest</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <i class="bi bi-code-slash" style="color: #ffbb2c; font-size: 32px; margin-bottom: 15px;"></i>
-              <h4>Emerging Cloud Technologies</h4>
-              <p>Exploration of emerging cloud technologies and staying up-to-date with industry trends.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-diagram-3" style="color: #5578ff; font-size: 32px; margin-bottom: 15px;"></i>
-              <h4>DevOps & IaC</h4>
-              <p>Implementation of best practices in DevOps, infrastructure as code, and agile development.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-people" style="color: #e80368; font-size: 32px; margin-bottom: 15px;"></i>
-              <h4>Tech Community</h4>
-              <p>Participation in meetups and conferences about cloud and DevOps, both online and in-person.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-water" style="color: #47aeff; font-size: 32px; margin-bottom: 15px;"></i>
-              <h4>Scuba Diving</h4>
-              <p>Practicing diving and outdoor activities that promote teamwork and problem-solving skills.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-globe" style="color: #29cc61; font-size: 32px; margin-bottom: 15px;"></i>
-              <h4>Traveling</h4>
-              <p>Exploring different cultures to broaden perspectives on global and intercultural work.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-heart" style="color: #ff689b; font-size: 32px; margin-bottom: 15px;"></i>
-              <h4>Tech Volunteering</h4>
-              <p>Contributing to the tech community through mentoring and open-source projects.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>Key professional competencies in DevOps, Cloud and SRE</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="skill-box mb-4" data-aos="fade-up">
-              <h4><i class="bi bi-terminal-fill me-2" style="color: #0078d4;"></i>Linux / Unix</h4>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-              </div>
-              <p class="mt-2">Advanced system administration, shell scripting, automation and optimization.</p>
-            </div>
-            
-            <div class="skill-box mb-4" data-aos="fade-up" data-aos-delay="100">
-              <h4><i class="bi bi-cloud-fill me-2" style="color: #0078d4;"></i>AWS / Cloud</h4>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
-              </div>
-              <p class="mt-2">Cloud solution architecture, EC2, S3, RDS, Lambda, VPC, CloudFormation, and serverless services.</p>
-            </div>
-            
-            <div class="skill-box mb-4" data-aos="fade-up" data-aos-delay="200">
-              <h4><i class="bi bi-gear-fill me-2" style="color: #0078d4;"></i>CI/CD</h4>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-              </div>
-              <p class="mt-2">Jenkins, GitLab CI, GitHub Actions, test automation and deployment.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="skill-box mb-4" data-aos="fade-up">
-              <h4><i class="bi bi-code-square me-2" style="color: #0078d4;"></i>Terraform / IaC</h4>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-              </div>
-              <p class="mt-2">Infrastructure as code, custom modules, multi-cloud automation and remote state management.</p>
-            </div>
-            
-            <div class="skill-box mb-4" data-aos="fade-up" data-aos-delay="100">
-              <h4><i class="bi bi-lightning me-2" style="color: #0078d4;"></i>Serverless Computing</h4>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-              </div>
-              <p class="mt-2">AWS Lambda, Azure Functions, event-driven architectures, API Gateway and serverless.</p>
-            </div>
-            
-            <div class="skill-box mb-4" data-aos="fade-up" data-aos-delay="200">
-              <h4><i class="bi bi-shield-check me-2" style="color: #0078d4;"></i>DevSecOps</h4>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-              </div>
-              <p class="mt-2">Security integration in pipelines, vulnerability analysis and security best practices.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row mt-4">
-          <div class="col-lg-12">
-            <div class="additional-skills p-4 bg-white rounded shadow-sm" data-aos="fade-up" data-aos-delay="300">
-              <h4 class="mb-3">Other Technical Skills</h4>
-              <div class="row">
-                <div class="col-md-4 mb-3">
-                  <span class="badge bg-light text-dark p-2 m-1">Docker</span>
-                  <span class="badge bg-light text-dark p-2 m-1">Azure</span>
-                  <span class="badge bg-light text-dark p-2 m-1">GCP</span>
-                  <span class="badge bg-light text-dark p-2 m-1">Ansible</span>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <span class="badge bg-light text-dark p-2 m-1">Python</span>
-                  <span class="badge bg-light text-dark p-2 m-1">Bash</span>
-                  <span class="badge bg-light text-dark p-2 m-1">Git</span>
-                  <span class="badge bg-light text-dark p-2 m-1">Prometheus</span>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <span class="badge bg-light text-dark p-2 m-1">Grafana</span>
-                  <span class="badge bg-light text-dark p-2 m-1">ELK Stack</span>
-                  <span class="badge bg-light text-dark p-2 m-1">PostgreSQL</span>
-                  <span class="badge bg-light text-dark p-2 m-1">MongoDB</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Skills Section -->
-   
-    <!-- ======= Resume Section ======= -->
-    
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-10">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>SENIOR SITE RELIABILITY ENGINEER | DEVOPS</h4>
-              <h5>2021 - Present</h5>
-              <p><em><b>LEADTECH</b></em></p>
-              <ul>
-                <li>Design and manage cloud infrastructure using AWS, Terraform, and CloudFormation, implementing Infrastructure as Code practices.</li>
-                <li>Lead the migration to Serverless Computing to improve scalability and reduce operational costs by 30%.</li>
-                <li>Implement CI/CD pipelines using Jenkins and GitHub Actions, reducing deployment time by 60%.</li>
-                <li>Collaborate with development teams implementing DevSecOps practices to enhance security and software quality.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>ASSOCIATE INSTRUCTOR</h4>
-              <h5>2021 - Present</h5>
-              <p><em><b>MONLAU CORPORATE</b></em></p>
-              <ul>
-                <li>Teach official certification courses in cloud computing, particularly Azure and AWS.</li>
-                <li>Mentor and guide students in the latest industry practices and technologies.</li>
-                <li>Develop and update course materials on Serverless Computing, CI/CD, and DevOps methodologies.</li>
-                <li>Advise students on research projects and professional development.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>ASSOCIATE PROFESSOR</h4>
-              <h5>July 2019 - July 2021</h5>
-              <p><em><b>MONLAU CENTRE D'ESTUDIS</b></em></p>
-              <ul>
-                <li>Taught students aged 16-20 in operating systems (Linux, Windows), web development, and network protocols.</li>
-                <li>Implemented agile methodologies in the classroom, increasing student participation by 40%.</li>
-                <li>Developed and updated the curriculum to keep it current with industry trends and best practices.</li>
-                <li>Mentored students, providing guidance to help them succeed in their studies and careers.</li>
-                <li>Organized technical workshops with industry professionals to enrich the learning experience.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>SCRUM MASTER</h4>
-              <h5>March 2018 - April 2019</h5>
-              <p><em><b>FHIOS</b></em></p>
-              <ul>
-                <li>Facilitated Scrum ceremonies (sprint planning, daily stand-ups, and retrospectives) for distributed development teams.</li>
-                <li>Eliminated team impediments and improved communication between departments, increasing productivity by 25%.</li>
-                <li>Reduced average resolution time for critical bugs by 40% by implementing continuous integration practices.</li>
-                <li>Collaborated with the Product Owner on feature prioritization and product backlog management.</li>
-                <li>Organized training sessions on agile methodologies for multidisciplinary teams.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>PROJECT MANAGER</h4>
-              <h5>January 2016 - March 2018</h5>
-              <p><em><b>MEDIACLOUD (MEDIAPRO)</b></em></p>
-              <ul>
-                <li>Led the successful implementation of multiple infrastructure projects in a private cloud environment using OpenStack technologies.</li>
-                <li>Managed project budgets exceeding €500,000, always delivering on time and within budget.</li>
-                <li>Developed and maintained strong relationships with key stakeholders, including clients and vendors.</li>
-                <li>Coordinated multidisciplinary teams of up to 15 people for the development and implementation of cloud solutions.</li>
-                <li>Designed and implemented cloud migration strategies for clients in the media and entertainment sectors.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>SITE RELIABILITY ENGINEER | DEVOPS</h4>
-              <h5>August 2015 - December 2015</h5>
-              <p><em><b>QUSTODIO</b></em></p>
-              <ul>
-                <li>Implemented scalable infrastructure solutions in AWS to support 200% growth in users.</li>
-                <li>Automated deployments using Ansible and Puppet, reducing deployment times from hours to minutes.</li>
-                <li>Designed and implemented resilient architectures for critical services, achieving 99.9% uptime.</li>
-                <li>Developed scripts for monitoring and proactive alerts that reduced nighttime incidents by 70%.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>SITE RELIABILITY ENGINEER | TEAM LEAD</h4>
-              <h5>May 2013 - July 2015</h5>
-              <p><em><b>INCUBIO</b></em></p>
-              <ul>
-                <li>Led a team of DevOps engineers implementing agile methodologies that improved efficiency by 35%.</li>
-                <li>Designed cloud-native architectures for over 15 startups, tailored to different scales and needs.</li>
-                <li>Reduced infrastructure costs by 40% through AWS resource optimization and auto-scaling.</li>
-                <li>Created automation systems with Puppet, enabling new environments to be operational in less than 2 hours.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>SITE RELIABILITY ENGINEER | DEVOPS</h4>
-              <h5>July 2011 - April 2013</h5>
-              <p><em><b>SOCIALPOINT</b></em></p>
-              <ul>
-                <li>Designed and implemented CI/CD pipelines that reduced deployment times by 75%, enabling multiple daily releases.</li>
-                <li>Managed AWS infrastructure for social games with over 10 million monthly active users.</li>
-                <li>Developed high availability systems for databases that supported peaks of 500,000 concurrent users.</li>
-                <li>Implemented comprehensive monitoring with real-time dashboards that improved incident response times.</li>
-                <li>Led the migration from monolith to microservices, improving scalability and reducing operational costs.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>SENIOR SYSTEM ADMINISTRATOR</h4>
-              <h5>January 2011 - July 2011</h5>
-              <p><em><b>SOCIALPOINT</b></em></p>
-              <ul>
-                <li>Managed and maintained the company's IT infrastructure, including servers, networking equipment, and storage systems.</li>
-                <li>Configured and managed firewall and security systems to protect against external threats.</li>
-                <li>Implemented and maintained email servers and anti-spam solutions.</li>
-                <li>Collaborated with the development team to support the deployment and scaling of applications.</li>
-                <li>Provided technical support and troubleshooting for team members and clients.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>SENIOR SYSTEM ADMINISTRATOR</h4>
-              <h5>July 2008 - December 2010</h5>
-              <p><em><b>PRIVALIA</b></em></p>
-              <ul>
-                <li>Managed Linux and Windows servers and oversaw system backups and disaster recovery processes.</li>
-                <li>Automated deployment and configuration management.</li>
-                <li>Implemented and managed virtualization using VMware and Hyper-V.</li>
-                <li>Improved system performance and reliability through regular maintenance and updates.</li>
-                <li>Collaborated with development teams to support the deployment and scaling of applications.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>Marc Ràfols Ibáñez</h3>
-      <p>Let's talk about your next project</p>
-      <div class="social-links">
-        <a href="https://twitter.com/marknes86" class="twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/marcrafols/" class="linkedin" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://www.github.com/mrafols" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-      </div>
-      <div class="email-contact mt-3">
-        <a href="mailto:marc@marcrafols.com" class="btn btn-outline-light btn-sm">marc@marcrafols.com</a>
-      </div>
-      <div class="copyright mt-4">
-        &copy; Copyright <strong><span>Marc Ràfols Ibáñez</span></strong> | <span>Updated: May 2025</span>
-      </div>
+<!-- About Section -->
+<section class="mt-4 sm:mt-6 md:mt-8 px-2 sm:px-4" aria-labelledby="about-title">
+  <h3 class="text-3xl sm:text-3xl font-extrabold text-black mb-3 flex items-center gap-2" id="about-title">
+    <svg class="inline-block h-7 w-7 sm:h-8 sm:w-8 text-[#0c77f2]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clip-path="url(#clip0_6_330)"><path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path></g><defs><clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath></defs></svg>
+    <span data-translate="about-me">About Me</span>
+  </h3>  
+  <!-- Info Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mb-7 sm:mb-8" role="list" aria-label="Información personal">    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow" role="listitem">
+      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl" aria-hidden="true">cake</span>
+      <span class="text-black font-semibold text-sm sm:text-base" data-translate="birthday">Birthday:</span>
+      <span class="text-gray-700 text-sm sm:text-base">21 December 1986</span>
     </div>
-  </footer><!-- End Footer -->
+    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow" role="listitem">
+      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl" aria-hidden="true">public</span>
+      <span class="text-black font-semibold text-sm sm:text-base" data-translate="website">Website:</span>
+      <a href="https://www.marcrafols.com" class="text-[#0c77f2] hover:underline text-sm sm:text-base" target="_blank">www.marcrafols.com</a>
+    </div>
+    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow">
+      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl">location_on</span>
+      <span class="text-black font-semibold text-sm sm:text-base" data-translate="city">City:</span>
+      <span class="text-gray-700 text-sm sm:text-base">Menorca, Spain</span>
+    </div>
+    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow">
+      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl">calendar_today</span>
+      <span class="text-black font-semibold text-sm sm:text-base" data-translate="age">Age:</span>
+      <span class="text-gray-700 text-sm sm:text-base">38</span>
+    </div>
+    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow">
+      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl">school</span>
+      <span class="text-black font-semibold text-sm sm:text-base" data-translate="degree">Degree:</span>
+      <span class="text-gray-700 text-sm sm:text-base">Multimedia & Digital Interaction</span>
+    </div>
+    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow">
+      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl">email</span>
+      <span class="text-black font-semibold text-sm sm:text-base" data-translate="email">Email:</span>
+      <a href="mailto:marc@marcrafols.com" class="text-[#0c77f2] hover:underline text-sm sm:text-base">marc@marcrafols.com</a>
+    </div>
+  </div>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- About Description -->
+  <div class="bg-gray-50 rounded-xl p-5 sm:p-6 shadow-lg mb-8">
+    <p class="text-gray-700 text-base sm:text-base font-normal leading-relaxed mb-4" data-translate="about-description">
+      I am a Site Reliability Engineer with over 15 years of experience in technology, specializing in cloud infrastructure, DevOps, and scalable architectures. Currently working at Leadtech Group, where I lead cloud migration initiatives and DevSecOps practices implementation.
+    </p>
+    <p class="text-gray-700 text-base sm:text-base font-normal leading-relaxed" data-translate="experience-passion">
+      My passion for technology has led me to work at innovative companies like Social Point, Incubio, and Qustodio, where I have managed infrastructures supporting millions of users. I also have teaching experience, having been a professor at Monlau and UPC.
+    </p>
+  </div>  <!-- Skills Section -->
+  <section aria-labelledby="skills-title">
+  <h4 class="text-2xl font-bold text-black mb-6" id="skills-title" data-translate="skills-title">Technical Skills</h4>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8" role="list" aria-label="Habilidades técnicas">    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow" role="listitem">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="material-icons text-[#0c77f2] flex-shrink-0" aria-hidden="true">cloud</span>
+        <h5 class="font-semibold text-black text-center flex-1" data-translate="cloud-infrastructure">Cloud Infrastructure</h5>
+      </div>
+      <p class="text-sm text-gray-600 text-center">AWS, Azure, OpenStack, Terraform</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="material-icons text-[#0c77f2] flex-shrink-0">build</span>
+        <h4 class="font-semibold text-black text-center flex-1" data-translate="devops-automation">DevOps & Automation</h4>
+      </div>
+      <p class="text-sm text-gray-600 text-center">Jenkins, Ansible, Puppet, GitLab CI</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="material-icons text-[#0c77f2] flex-shrink-0">monitoring</span>
+        <h4 class="font-semibold text-black text-center flex-1" data-translate="monitoring-observability">Monitoring & Observability</h4>
+      </div>
+      <p class="text-sm text-gray-600 text-center">Prometheus, Grafana, ELK Stack</p>
+    </div>    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="material-icons text-[#0c77f2] flex-shrink-0">developer_board</span>
+        <h4 class="font-semibold text-black text-center flex-1" data-translate="containerization">Containerization</h4>
+      </div>
+      <p class="text-sm text-gray-600 text-center">Docker, Kubernetes, OpenShift</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="material-icons text-[#0c77f2] flex-shrink-0">code</span>
+        <h4 class="font-semibold text-black text-center flex-1" data-translate="iac">Infrastructure as Code</h4>
+      </div>
+      <p class="text-sm text-gray-600 text-center">Terraform, CloudFormation, ARM</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="material-icons text-[#0c77f2] flex-shrink-0">sync</span>
+        <h4 class="font-semibold text-black text-center flex-1" data-translate="cicd">CI/CD Pipelines</h4>
+      </div>
+      <p class="text-sm text-gray-600 text-center">GitHub Actions, Azure DevOps</p>
+    </div>
+  </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- CTA Buttons -->
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="experience.html" class="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0c77f2] px-6 py-3 text-white font-medium hover:bg-blue-600 transition-colors">
+      <span class="material-icons">work</span>
+      <span data-translate="view-experience">View Full Experience</span>
+    </a>
+    <a href="contact.html" class="inline-flex items-center justify-center gap-2 rounded-lg border border-[#0c77f2] px-6 py-3 text-[#0c77f2] font-medium hover:bg-[#0c77f2] hover:text-white transition-colors">
+      <span class="material-icons">email</span>
+      <span data-translate="contact-me">Contact Me</span>
+    </a>  </div>
+</section>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+</div>
+</main>
 
-</body>
+<footer class="border-t border-solid border-t-[#e5e7eb] px-4 sm:px-10 py-6 sm:py-8 mt-8 sm:mt-10 md:mt-12" role="contentinfo">
+<div class="flex flex-col items-center gap-4 sm:gap-6">
+<nav aria-label="Social media links">
+<ul class="flex justify-center gap-4 sm:gap-6" role="list">
+<li>
+<a aria-label="GitHub Profile" class="flex items-center justify-center rounded-full h-10 w-10 sm:h-12 sm:w-12 bg-gray-100 text-black hover:bg-[#0c77f2] hover:text-white hover:scale-110 active:scale-95 transition-all duration-200 focus-visible" href="https://github.com/mrafols" target="_blank" rel="noopener noreferrer">
+<svg fill="currentColor" height="18px" width="18px" viewBox="0 0 256 256" class="sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58a43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path>
+</svg>
+</a>
+</li>
+<li>
+<a aria-label="LinkedIn Profile" class="flex items-center justify-center rounded-full h-10 w-10 sm:h-12 sm:w-12 bg-gray-100 text-black hover:bg-[#0c77f2] hover:text-white hover:scale-110 active:scale-95 transition-all duration-200 focus-visible" href="https://www.linkedin.com/in/marcrafols/" target="_blank" rel="noopener noreferrer">
+<svg fill="currentColor" height="18px" width="18px" viewBox="0 0 256 256" class="sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+</svg>
+</a>
+</li>
+</ul>
+</nav>
+<p class="text-xs sm:text-sm text-gray-600 text-center" data-translate="copyright">© 2024 Marc Ràfols Ibáñez. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
 
-</html>
+<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/language.js"></script>
+<script src="/assets/js/security.js"></script>
+<script src="/assets/js/performance.js"></script>
+<script src="/assets/js/animations.js"></script>
+<script src="/assets/js/pwa.js"></script>
+</body></html>
