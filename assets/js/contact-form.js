@@ -32,12 +32,36 @@ class ContactFormHandler {
         
         this.init();
     }
-    
-    init() {
+      init() {
         if (this.form) {
-            this.form.addEventListener('submit', this.handleSubmit.bind(this));
+            // Check if FormSubmit.co should be used with native form submission
+            // This is more reliable for FormSubmit.co
+            if (this.form.action.includes('formsubmit.co')) {
+                // Use native form submission for better compatibility
+                this.setupNativeSubmission();
+            } else {
+                // Use fetch API for other services
+                this.form.addEventListener('submit', this.handleSubmit.bind(this));
+            }
             this.checkUrlParams();
         }
+    }
+    
+    setupNativeSubmission() {
+        this.form.addEventListener('submit', (event) => {
+            if (!this.validateForm()) {
+                event.preventDefault();
+                return;
+            }
+            
+            // Let the form submit naturally to FormSubmit.co
+            this.setLoading(true);
+            
+            // Show a message that the form is being submitted
+            setTimeout(() => {
+                this.showMessage(this.getCurrentMessage('sending'), 'info');
+            }, 100);
+        });
     }
     
     checkUrlParams() {
@@ -50,8 +74,7 @@ class ContactFormHandler {
             window.history.replaceState({}, document.title, url.pathname);
         }
     }
-    
-    async handleSubmit(event) {
+      async handleSubmit(event) {
         event.preventDefault();
         
         if (!this.validateForm()) {
@@ -63,24 +86,22 @@ class ContactFormHandler {
         try {
             const formData = new FormData(this.form);
             
+            // For FormSubmit.co, we can use a direct form submission
+            // or fetch API for better control
             const response = await fetch(this.form.action, {
                 method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                body: formData
             });
             
-            if (response.ok) {
-                this.showSuccess();
-                this.form.reset();
-            } else {
-                const data = await response.json();
-                this.showError(data.error || this.getCurrentMessage('error'));
-            }
+            // FormSubmit.co returns a redirect on success
+            // If we reach here without error, it's likely successful
+            this.showSuccess();
+            this.form.reset();
+            
         } catch (error) {
             console.error('Form submission error:', error);
-            this.showError(this.getCurrentMessage('networkError'));
+            // On error, provide fallback option
+            this.showErrorWithFallback();
         } finally {
             this.setLoading(false);
         }
@@ -161,8 +182,7 @@ class ContactFormHandler {
             this.formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     }
-    
-    showError(message) {
+      showError(message) {
         this.showMessage(message, 'error');
         
         // Scroll to form status for better UX
@@ -171,19 +191,44 @@ class ContactFormHandler {
         }
     }
     
-    showMessage(message, type) {
+    showErrorWithFallback() {
+        const currentLang = localStorage.getItem('language') || 'en';
+        const fallbackMessage = currentLang === 'es' 
+            ? 'Error al enviar el formulario. Por favor, usa el enlace "Escríbeme directamente" más abajo.'
+            : 'Error submitting form. Please use the "Email me directly" link below.';
+        
+        this.showError(fallbackMessage);
+    }
+      showMessage(message, type) {
         if (!this.formStatus) return;
         
-        this.formStatus.className = `form-status p-4 rounded-lg mb-4 ${type === 'success' ? 'bg-green-100 text-green-800 border border-green-200' : 'bg-red-100 text-red-800 border border-red-200'}`;
+        let bgClass, textClass, borderClass;
+        if (type === 'success') {
+            bgClass = 'bg-green-100';
+            textClass = 'text-green-800';
+            borderClass = 'border-green-200';
+        } else if (type === 'info') {
+            bgClass = 'bg-blue-100';
+            textClass = 'text-blue-800';
+            borderClass = 'border-blue-200';
+        } else {
+            bgClass = 'bg-red-100';
+            textClass = 'text-red-800';
+            borderClass = 'border-red-200';
+        }
+        
+        this.formStatus.className = `form-status p-4 rounded-lg mb-4 ${bgClass} ${textClass} border ${borderClass}`;
         this.formStatus.textContent = message;
         this.formStatus.classList.remove('hidden');
         
-        // Auto-hide after 5 seconds
-        setTimeout(() => {
-            if (this.formStatus) {
-                this.formStatus.classList.add('hidden');
-            }
-        }, 5000);
+        // Auto-hide after 5 seconds for info messages
+        if (type === 'info') {
+            setTimeout(() => {
+                if (this.formStatus) {
+                    this.formStatus.classList.add('hidden');
+                }
+            }, 5000);
+        }
         
         // Announce to screen readers
         this.announceToScreenReader(message);

@@ -1,6 +1,8 @@
 // Language switcher functionality
 const translations = {        'message-placeholder': 'Cuéntame sobre tu proyecto u oportunidad...',
-        'send-message': 'Enviar Mensaje',   es: {
+        'send-message': 'Enviar Mensaje',
+        'form-trouble': '¿Problemas con el formulario?',
+        'email-directly': 'Escríbeme directamente',es: {
         // Header
         'portfolio': 'Marc Portfolio',
         'about': 'Acerca de',
@@ -185,9 +187,10 @@ const translations = {        'message-placeholder': 'Cuéntame sobre tu proyect
         'email-placeholder': 'your@email.com',
         'subject-label': 'Subject',
         'subject-placeholder': 'Project collaboration, job opportunity, etc.',
-        'message-label': 'Message',
-        'message-placeholder': 'Tell me about your project or opportunity...',
+        'message-label': 'Message',        'message-placeholder': 'Tell me about your project or opportunity...',
         'send-message': 'Send Message',
+        'form-trouble': 'Having trouble with the form?',
+        'email-directly': 'Email me directly',
         
         // Footer
         'copyright': '© 2024 Marc Ràfols Ibáñez. All rights reserved.',
