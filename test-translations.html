@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Test Translations</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .language-switcher button { margin: 5px; padding: 10px; }
+        .language-switcher button.active { background: #0c77f2; color: white; }
+        .test-section { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Translation Test</h1>
+    
+    <div class="language-switcher">
+        <button data-lang="en">English</button>
+        <button data-lang="es">Español</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Contact Information Test</h2>
+        <h3 data-translate="contact-info">Contact Information</h3>
+        <p data-translate="contact-email">Email</p>
+        <p data-translate="contact-location">Location</p>
+        <p data-translate="contact-availability">Availability</p>
+        <p data-translate="contact-availability-value">Open to remote opportunities</p>
+        <p data-translate="connect-with-me">Connect with me</p>
+    </div>
+    
+    <script>
+        // Simple translation object for testing
+        const translations = {
+            es: {
+                'contact-info': 'Información de Contacto',
+                'contact-email': 'Email',
+                'contact-location': 'Ubicación',
+                'contact-availability': 'Disponibilidad',
+                'contact-availability-value': 'Abierto a oportunidades remotas',
+                'connect-with-me': 'Conéctate conmigo'
+            },
+            en: {
+                'contact-info': 'Contact Information',
+                'contact-email': 'Email',
+                'contact-location': 'Location',
+                'contact-availability': 'Availability',
+                'contact-availability-value': 'Open to remote opportunities',
+                'connect-with-me': 'Connect with me'
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function translateElement(element, key) {
+            if (translations[currentLanguage] && translations[currentLanguage][key]) {
+                element.textContent = translations[currentLanguage][key];
+                console.log(`Translated "${key}" to "${translations[currentLanguage][key]}"`);
+            } else {
+                console.warn(`Translation key "${key}" not found for language "${currentLanguage}"`);
+            }
+        }
+
+        function translatePage() {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (key) {
+                    translateElement(element, key);
+                }
+            });
+            
+            // Update language switcher active state
+            document.querySelectorAll('.language-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === currentLanguage) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function switchLanguage(lang) {
+            console.log(`Switching to language: ${lang}`);
+            currentLanguage = lang;
+            translatePage();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            translatePage();
+            
+            // Add event listeners to language switcher buttons
+            document.querySelectorAll('.language-switcher button').forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    if (lang) {
+                        switchLanguage(lang);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

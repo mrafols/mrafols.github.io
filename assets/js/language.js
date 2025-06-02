@@ -51,19 +51,19 @@ const translations = {        'message-placeholder': 'Cuéntame sobre tu proyect
         'freelance': 'Freelance',
         'training-contract': 'Contrato de formación',
         'remote': 'Remoto',
-        
-        // Contact page
+          // Contact page
         'contact-title': 'Contáctame',
         'contact-subtitle': 'Estoy disponible para nuevas oportunidades y colaboraciones',
-        'contact-form-title': 'Envíame un mensaje',
-        'name-label': 'Nombre',        'name-placeholder': 'Tu nombre',
-        'email-label': 'Email',
-        'email-placeholder': 'tu@email.com',
-        'subject-label': 'Asunto',
-        'subject-placeholder': 'Colaboración de proyecto, oportunidad laboral, etc.',
-        'message-label': 'Mensaje',
-        'message-placeholder': 'Cuéntame sobre tu proyecto o oportunidad...',
-        'send-message': 'Enviar Mensaje',
+        'contact-info': 'Información de Contacto',
+        'contact-email': 'Email',
+        'contact-location': 'Ubicación',
+        'contact-availability': 'Disponibilidad',
+        'contact-availability-value': 'Abierto a oportunidades remotas',
+        'connect-with-me': 'Conéctate conmigo',
+        'get-in-touch': 'Ponte en Contacto',
+        'contact-intro': '¿Listo para colaborar? ¡Me encantaría saber de ti!',
+        'send-email': 'Enviar Email',
+        'typical-response': 'Tiempo de respuesta típico: 24-48 horas',
         
         // Footer
         'copyright': '© 2024 Marc Ràfols Ibáñez. Todos los derechos reservados.',
@@ -183,20 +183,19 @@ const translations = {        'message-placeholder': 'Cuéntame sobre tu proyect
         'freelance': 'Freelance',
         'training-contract': 'Training Contract',
         'remote': 'Remote',
-        
-        // Contact page
+          // Contact page
         'contact-title': 'Contact Me',
         'contact-subtitle': 'I\'m available for new opportunities and collaborations',
-        'contact-form-title': 'Send me a message',
-        'name-label': 'Name',        'name-placeholder': 'Your name',
-        'email-label': 'Email',
-        'email-placeholder': 'your@email.com',
-        'subject-label': 'Subject',
-        'subject-placeholder': 'Project collaboration, job opportunity, etc.',
-        'message-label': 'Message',        'message-placeholder': 'Tell me about your project or opportunity...',
-        'send-message': 'Send Message',
-        'form-trouble': 'Having trouble with the form?',
-        'email-directly': 'Email me directly',
+        'contact-info': 'Contact Information',
+        'contact-email': 'Email',
+        'contact-location': 'Location',
+        'contact-availability': 'Availability',
+        'contact-availability-value': 'Open to remote opportunities',
+        'connect-with-me': 'Connect with me',
+        'get-in-touch': 'Get in Touch',
+        'contact-intro': 'Ready to collaborate? I\'d love to hear from you!',
+        'send-email': 'Send Email',
+        'typical-response': 'Typical response time: 24-48 hours',
         
         // Footer
         'copyright': '© 2024 Marc Ràfols Ibáñez. All rights reserved.',

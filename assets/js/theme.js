@@ -236,15 +236,14 @@ class ThemeManager {
     
     // Setup system theme listener
     this.setupSystemThemeListener();
-    
-    // Add theme toggle button (only in development or if explicitly enabled)
-    if (window.location.hostname === 'localhost' || 
-        window.location.search.includes('theme-toggle=true')) {
-      document.addEventListener('DOMContentLoaded', () => {
-        const toggle = this.createThemeToggle();
-        document.body.appendChild(toggle);
-      });
-    }
+      // Theme toggle button disabled
+    // if (window.location.hostname === 'localhost' || 
+    //     window.location.search.includes('theme-toggle=true')) {
+    //   document.addEventListener('DOMContentLoaded', () => {
+    //     const toggle = this.createThemeToggle();
+    //     document.body.appendChild(toggle);
+    //   });
+    // }
 
     // Listen for theme preference from keyboard shortcut
     document.addEventListener('keydown', (e) => {
