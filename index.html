@@ -15,10 +15,11 @@
 <meta name="twitter:image" content="https://mrafols.github.io/assets/img/profile-img.jpg">
 <link rel="canonical" href="https://mrafols.github.io">
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Spline+Sans:wght@400;500;600;700&text=Marc%20R%C3%A0fols%20Portfolio%20Site%20Reliability%20Engineer%20DevOps" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Spline+Sans:wght@400;500;600;700"/></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&text=Marc%20R%C3%A0fols%20Portfolio%20Site%20Reliability%20Engineer%20DevOps" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700"/></noscript>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Icons&text=cake%2Bpublic%2Blocation_on%2Bcalendar_today%2Bschool%2Bemail%2Bcloud%2Bbuild%2Bmonitoring%2Bdeveloper_board%2Bcode%2Bsync%2Bwork" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons"/></noscript>
+<link href="/assets/css/style.css" rel="stylesheet"/>
 <title>Marc Ràfols - Portfolio</title>
 <!-- Favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
@@ -37,32 +38,293 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style>
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #667eea10 0%, #764ba210 50%, #4facfe10 100%);
+  background-attachment: fixed;
+}
+
+/* Animated background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 40% 20%, rgba(79, 172, 254, 0.08) 0%, transparent 50%);
+  animation: bgMove 20s ease-in-out infinite;
+}
+
+@keyframes bgMove {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+}
+
 .language-switcher button {
-  transition: all 0.3s ease;
-  font-weight: 500;
-  border-radius: 6px;
-  min-width: 40px;
-  height: 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  border-radius: 8px;
+  min-width: 44px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
+
+.language-switcher button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.language-switcher button span {
+  position: relative;
+  z-index: 1;
+}
+
+.language-switcher button.active::before {
+  opacity: 1;
+}
+
 .language-switcher button.active {
-  background-color: #0c77f2;
   color: white;
-  box-shadow: 0 2px 4px rgba(12, 119, 242, 0.3);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transform: translateY(-1px);
 }
+
 .language-switcher button:not(.active):hover {
   background-color: #f3f4f6;
-  color: #0c77f2;
+  color: #667eea;
+  transform: translateY(-1px);
 }
+
 .language-switcher {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 4px;
 }
+
+/* Glass morphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Animated gradient border */
+@keyframes gradientRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.gradient-border {
+  position: relative;
+  background: white;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #667eea, #764ba2, #4facfe, #00f2fe);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: gradientRotate 3s linear infinite;
+  z-index: -1;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Fade in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; opacity: 0; }
+.delay-200 { animation-delay: 0.2s; opacity: 0; }
+.delay-300 { animation-delay: 0.3s; opacity: 0; }
+.delay-400 { animation-delay: 0.4s; opacity: 0; }
+.delay-500 { animation-delay: 0.5s; opacity: 0; }
+
+/* Profile image glow */
+.profile-glow {
+  position: relative;
+}
+
+.profile-glow::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0.3;
+  filter: blur(20px);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.95); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+/* Skill card hover effects */
+.skill-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.skill-card:hover::before {
+  left: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
+}
+
+/* Button gradient */
+.btn-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-gradient:hover::before {
+  left: 100%;
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-outline-gradient {
+  background: transparent;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: #667eea;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-gradient:hover {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%), 
+                    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+}
+
 /* Screen reader only content */
 .sr-only {
   position: absolute;
@@ -75,53 +337,79 @@
   white-space: nowrap;
   border: 0;
 }
+
 /* Focus visible for better keyboard navigation */
 .focus-visible:focus {
-  outline: 2px solid #0c77f2;
+  outline: 2px solid #667eea;
   outline-offset: 2px;
 }
+
 /* Skip link for accessibility */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #0c77f2;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   padding: 8px;
   text-decoration: none;
   z-index: 1000;
-  border-radius: 4px;
+  border-radius: 8px;
+  font-weight: 600;
 }
+
 .skip-link:focus {
   top: 6px;
 }
+
+/* Section title decorative elements */
+.section-title-decoration {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title-decoration::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
+  border-radius: 2px;
+}
 </style>
 </head>
-<body class="bg-white">
+<body class="bg-white relative">
+<div class="animated-bg"></div>
 <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-<header class="flex flex-col sm:flex-row items-center justify-between border-b border-solid border-b-[#e5e7eb] px-4 sm:px-10 py-4 sm:py-5 gap-4 sm:gap-0" role="banner">
+<header class="glass-card flex flex-col sm:flex-row items-center justify-between px-4 sm:px-10 py-4 sm:py-5 gap-4 sm:gap-0 sticky top-0 z-50 fade-in-up" role="banner">
   <div class="flex items-center gap-3 sm:gap-4 text-black">
-    <svg class="h-6 w-6 sm:h-8 sm:w-8 text-[#0c77f2]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg class="h-6 w-6 sm:h-8 sm:w-8 gradient-text" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <g clip-path="url(#clip0_6_330)">
-        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="url(#gradient1)" fill-rule="evenodd"></path>
       </g>
       <defs>
         <clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath>
+        <linearGradient id="gradient1" x1="0" y1="0" x2="48" y2="48">
+          <stop offset="0%" stop-color="#667eea"/>
+          <stop offset="100%" stop-color="#764ba2"/>
+        </linearGradient>
       </defs>
     </svg>
-    <h1 class="text-lg sm:text-xl font-bold tracking-[-0.015em] text-black" data-translate="portfolio">Marc Portfolio</h1>
+    <h1 class="text-lg sm:text-xl font-bold tracking-tight gradient-text" data-translate="portfolio">Marc Portfolio</h1>
   </div>
-  <nav class="flex items-center gap-3 sm:gap-6" role="navigation" aria-label="Navegación principal">    <!-- Language Switcher -->
-    <div class="language-switcher flex rounded-lg overflow-hidden" role="group" aria-label="Selector de idioma">
-      <button data-lang="en" class="px-3 py-2 text-lg font-bold transition-all" aria-label="Switch to English" title="English">EN</button>
-      <button data-lang="es" class="px-3 py-2 text-lg font-bold transition-all" aria-label="Cambiar a español" title="Español">ES</button>
+  <nav class="flex items-center gap-3 sm:gap-6" role="navigation" aria-label="Navegación principal">
+    <div class="language-switcher flex gap-1" role="group" aria-label="Selector de idioma">
+      <button data-lang="en" class="px-3 py-2 text-sm font-bold" aria-label="Switch to English" title="English"><span>EN</span></button>
+      <button data-lang="es" class="px-3 py-2 text-sm font-bold" aria-label="Cambiar a español" title="Español"><span>ES</span></button>
     </div>
-    <a class="text-[#0c77f2] text-sm sm:text-base font-medium leading-normal" href="index.html" data-translate="about">About</a>
-    <a class="text-black hover:text-[#0c77f2] text-sm sm:text-base font-medium leading-normal transition-colors" href="experience.html" data-translate="experience">Experience</a>
-    <a class="text-black hover:text-[#0c77f2] text-sm sm:text-base font-medium leading-normal transition-colors" href="contact.html" data-translate="contact">Contact</a>
-    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 sm:size-10 border-2 border-[#0c77f2]" style='background-image: url("/assets/img/profile-img.jpg");' loading="lazy" aria-label="Foto de perfil de Marc Ràfols"></div>
+    <a class="gradient-text text-sm sm:text-base font-semibold leading-normal" href="index.html" data-translate="about">About</a>
+    <a class="text-gray-700 hover:text-purple-600 text-sm sm:text-base font-semibold leading-normal transition-all" href="experience.html" data-translate="experience">Experience</a>
+    <a class="text-gray-700 hover:text-purple-600 text-sm sm:text-base font-semibold leading-normal transition-all" href="contact.html" data-translate="contact">Contact</a>
+    <div class="profile-glow bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 sm:size-10 ring-2 ring-purple-400 ring-offset-2" style='background-image: url("/assets/img/profile-img.jpg");' loading="lazy" aria-label="Foto de perfil de Marc Ràfols"></div>
   </nav>
 </header>
 
@@ -129,144 +417,233 @@
 <div class="layout-content-container flex flex-col max-w-4xl flex-1">
 
 <!-- Hero Section -->
-<section class="flex flex-col md:flex-row gap-6 md:gap-12 items-center md:items-start p-2 sm:p-4 @container" aria-labelledby="hero-title">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-36 w-36 sm:min-h-40 sm:w-40 md:min-h-48 md:w-48 shadow-lg border-4 border-[#e5e7eb]" style='background-image: url("/assets/img/profile-img.jpg");' loading="lazy" role="img" aria-label="Foto de perfil de Marc Ràfols"></div>
-<div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
-<h2 class="text-black text-3xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight" id="hero-title" data-translate="hero-title">Hi, I'm Marc</h2>
-<p class="text-gray-700 text-lg sm:text-lg md:text-xl font-medium" data-translate="hero-subtitle">Site Reliability Engineer | DevOps</p>
-<p class="text-gray-600 text-base sm:text-base font-normal" data-translate="hero-description">Specialized in cloud infrastructure, automation, and scalable architectures. With over 15 years of experience in technology.</p>
+<section class="flex flex-col md:flex-row gap-8 md:gap-16 items-center md:items-center p-2 sm:p-4 py-12 sm:py-16 @container fade-in-up delay-100" aria-labelledby="hero-title">
+<div class="profile-glow bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-44 w-44 sm:min-h-52 sm:w-52 md:min-h-64 md:w-64 shadow-2xl ring-4 ring-purple-400 ring-offset-4 float-animation" style='background-image: url("/assets/img/profile-img.jpg");' loading="lazy" role="img" aria-label="Foto de perfil de Marc Ràfols"></div>
+<div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left flex-1">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-semibold gradient-text mb-2">
+  <span class="relative flex h-3 w-3">
+    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+    <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+  </span>
+  <span>Disponible para colaborar</span>
+</div>
+<h2 class="text-black text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight" id="hero-title" data-translate="hero-title" style="font-family: 'Space Grotesk', sans-serif;">Hi, I'm <span class="gradient-text">Marc</span></h2>
+<p class="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text-blue" data-translate="hero-subtitle" style="font-family: 'Space Grotesk', sans-serif;">Site Reliability Engineer</p>
+<p class="text-gray-600 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-xl" data-translate="hero-description">Especializado en infraestructura cloud, automatización y arquitecturas escalables. Con más de 15 años de experiencia en tecnología transformando ideas en soluciones robustas.</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+  <a href="#skills" class="btn-gradient inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-white font-bold text-base shadow-xl">
+    <span class="material-icons">rocket_launch</span>
+    <span data-translate="explore-skills">Ver Habilidades</span>
+  </a>
+  <a href="contact.html" class="btn-outline-gradient inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold text-base">
+    <span class="material-icons">mail</span>
+    <span data-translate="contact-me">Contactar</span>
+  </a>
+</div>
 </div>
 </section>
 
 <!-- About Section -->
-<section class="mt-4 sm:mt-6 md:mt-8 px-2 sm:px-4" aria-labelledby="about-title">
-  <h3 class="text-3xl sm:text-3xl font-extrabold text-black mb-3 flex items-center gap-2" id="about-title">
-    <svg class="inline-block h-7 w-7 sm:h-8 sm:w-8 text-[#0c77f2]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g clip-path="url(#clip0_6_330)"><path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path></g><defs><clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath></defs></svg>
-    <span data-translate="about-me">About Me</span>
+<section class="mt-12 sm:mt-16 md:mt-20 px-2 sm:px-4 fade-in-up delay-200" aria-labelledby="about-title">
+  <h3 class="text-3xl sm:text-4xl font-black text-black mb-8 section-title-decoration" id="about-title" style="font-family: 'Space Grotesk', sans-serif;">
+    <span data-translate="about-me">Sobre Mí</span>
   </h3>  
   <!-- Info Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mb-7 sm:mb-8" role="list" aria-label="Información personal">    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow" role="listitem">
-      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl" aria-hidden="true">cake</span>
-      <span class="text-black font-semibold text-sm sm:text-base" data-translate="birthday">Birthday:</span>
-      <span class="text-gray-700 text-sm sm:text-base" data-translate="birthday-value">21 December 1986</span>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8" role="list" aria-label="Información personal">
+    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group" role="listitem">
+      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg group-hover:scale-110 transition-transform">
+        <span class="material-icons text-white text-xl" aria-hidden="true">cake</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="birthday">Cumpleaños</span>
+        <span class="text-gray-900 font-bold text-sm sm:text-base" data-translate="birthday-value">21 Diciembre 1986</span>
+      </div>
     </div>
-    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow" role="listitem">
-      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl" aria-hidden="true">public</span>
-      <span class="text-black font-semibold text-sm sm:text-base" data-translate="website">Website:</span>
-      <a href="https://www.marcrafols.com" class="text-[#0c77f2] hover:underline text-sm sm:text-base" target="_blank">www.marcrafols.com</a>
+    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group" role="listitem">
+      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-cyan-500 shadow-lg group-hover:scale-110 transition-transform">
+        <span class="material-icons text-white text-xl" aria-hidden="true">public</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="website">Sitio Web</span>
+        <a href="https://www.marcrafols.com" class="gradient-text-blue hover:underline text-sm sm:text-base font-bold" target="_blank">www.marcrafols.com</a>
+      </div>
     </div>
-    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow">
-      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl">location_on</span>
-      <span class="text-black font-semibold text-sm sm:text-base" data-translate="city">City:</span>
-      <span class="text-gray-700 text-sm sm:text-base" data-translate="city-value">Menorca, Spain</span>
+    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group">
+      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 shadow-lg group-hover:scale-110 transition-transform">
+        <span class="material-icons text-white text-xl">location_on</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="city">Ciudad</span>
+        <span class="text-gray-900 font-bold text-sm sm:text-base" data-translate="city-value">Menorca, España</span>
+      </div>
     </div>
-    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow">
-      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl">calendar_today</span>
-      <span class="text-black font-semibold text-sm sm:text-base" data-translate="age">Age:</span>
-      <span class="text-gray-700 text-sm sm:text-base">38</span>
+    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group">
+      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-lg group-hover:scale-110 transition-transform">
+        <span class="material-icons text-white text-xl">calendar_today</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="age">Edad</span>
+        <span class="text-gray-900 font-bold text-sm sm:text-base">38 años</span>
+      </div>
     </div>
-    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow">
-      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl">school</span>
-      <span class="text-black font-semibold text-sm sm:text-base" data-translate="degree">Degree:</span>
-      <span class="text-gray-700 text-sm sm:text-base" data-translate="degree-value">Multimedia & Digital Interaction</span>
+    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group">
+      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg group-hover:scale-110 transition-transform">
+        <span class="material-icons text-white text-xl">school</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="degree">Titulación</span>
+        <span class="text-gray-900 font-bold text-sm sm:text-base" data-translate="degree-value">Multimedia & Digital Interaction</span>
+      </div>
     </div>
-    <div class="flex items-center gap-3 bg-gray-50 rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow">
-      <span class="material-icons text-[#0c77f2] text-lg sm:text-xl">email</span>
-      <span class="text-black font-semibold text-sm sm:text-base" data-translate="email">Email:</span>
-      <a href="mailto:marc@marcrafols.com" class="text-[#0c77f2] hover:underline text-sm sm:text-base">marc@marcrafols.com</a>
+    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group">
+      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-600 shadow-lg group-hover:scale-110 transition-transform">
+        <span class="material-icons text-white text-xl">email</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="email">Email</span>
+        <a href="mailto:marc@marcrafols.com" class="gradient-text hover:underline text-sm sm:text-base font-bold">marc@marcrafols.com</a>
+      </div>
     </div>
   </div>
 
   <!-- About Description -->
-  <div class="bg-gray-50 rounded-xl p-5 sm:p-6 shadow-lg mb-8">
-    <p class="text-gray-700 text-base sm:text-base font-normal leading-relaxed mb-4" data-translate="about-description">
-      I am a Site Reliability Engineer with over 15 years of experience in technology, specializing in cloud infrastructure, DevOps, and scalable architectures. Currently working at Leadtech Group, where I lead cloud migration initiatives and DevSecOps practices implementation.
-    </p>
-    <p class="text-gray-700 text-base sm:text-base font-normal leading-relaxed" data-translate="experience-passion">
-      My passion for technology has led me to work at innovative companies like Social Point, Incubio, and Qustodio, where I have managed infrastructures supporting millions of users. I also have teaching experience, having been a professor at Monlau and UPC.
-    </p>
+  <div class="glass-card rounded-3xl p-6 sm:p-8 mb-10 hover-lift">
+    <div class="flex items-start gap-4 mb-4">
+      <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 shadow-xl">
+        <span class="material-icons text-white text-2xl">person</span>
+      </div>
+      <div class="flex-1">
+        <p class="text-gray-700 text-base sm:text-lg font-medium leading-relaxed mb-4" data-translate="about-description">
+          Soy un Site Reliability Engineer con más de 15 años de experiencia en tecnología, especializado en infraestructura cloud, DevOps y arquitecturas escalables. Actualmente trabajo en Leadtech Group, donde lidero iniciativas de migración a la nube e implementación de prácticas DevSecOps.
+        </p>
+        <p class="text-gray-700 text-base sm:text-lg font-medium leading-relaxed" data-translate="experience-passion">
+          Mi pasión por la tecnología me ha llevado a trabajar en empresas innovadoras como Social Point, Incubio y Qustodio, donde he gestionado infraestructuras que soportan millones de usuarios. También tengo experiencia docente, habiendo sido profesor en Monlau y la UPC.
+        </p>
+      </div>
+    </div>
   </div>  <!-- Skills Section -->
-  <section aria-labelledby="skills-title">
-  <h4 class="text-2xl font-bold text-black mb-6" id="skills-title" data-translate="skills-title">Technical Skills</h4>  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8" role="list" aria-label="Habilidades técnicas">
-    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow text-center" role="listitem">
-      <div class="flex flex-col items-center gap-2 mb-2">
-        <span class="material-icons text-[#0c77f2] text-xl" aria-hidden="true">cloud</span>
-        <h4 class="font-semibold text-black text-sm" data-translate="cloud-infrastructure">Cloud Infrastructure</h4>
+  <section aria-labelledby="skills-title" id="skills" class="fade-in-up delay-300">
+  <h4 class="text-3xl sm:text-4xl font-black text-black mb-10 section-title-decoration" id="skills-title" data-translate="skills-title" style="font-family: 'Space Grotesk', sans-serif;">Habilidades Técnicas</h4>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12" role="list" aria-label="Habilidades técnicas">
+    <div class="skill-card glass-card rounded-2xl p-6 text-center group" role="listitem">
+      <div class="flex flex-col items-center gap-3 mb-3">
+        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 shadow-xl group-hover:scale-110 transition-transform">
+          <span class="material-icons text-white text-3xl" aria-hidden="true">cloud</span>
+        </div>
+        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="cloud-infrastructure">Cloud Infrastructure</h5>
       </div>
-      <p class="text-xs text-gray-600">AWS, Azure, OpenStack, Terraform</p>
+      <p class="text-sm text-gray-600 font-medium">AWS · Azure · OpenStack · Terraform</p>
     </div>
-    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow text-center">
-      <div class="flex flex-col items-center gap-2 mb-2">
-        <span class="material-icons text-[#0c77f2] text-xl">build</span>
-        <h4 class="font-semibold text-black text-sm" data-translate="devops-automation">DevOps & Automation</h4>
+    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
+      <div class="flex flex-col items-center gap-3 mb-3">
+        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-indigo-500 shadow-xl group-hover:scale-110 transition-transform">
+          <span class="material-icons text-white text-3xl">build</span>
+        </div>
+        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="devops-automation">DevOps & Automation</h5>
       </div>
-      <p class="text-xs text-gray-600">Jenkins, Ansible, Puppet, GitLab CI</p>
-    </div>    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow text-center">
-      <div class="flex flex-col items-center gap-2 mb-2">
-        <span class="material-icons text-[#0c77f2] text-xl">visibility</span>
-        <h4 class="font-semibold text-black text-sm" data-translate="monitoring-observability">Monitoring & Observability</h4>
-      </div>
-      <p class="text-xs text-gray-600">Prometheus, Grafana, ELK Stack</p>
+      <p class="text-sm text-gray-600 font-medium">Jenkins · Ansible · Puppet · GitLab CI</p>
     </div>
-    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow text-center">
-      <div class="flex flex-col items-center gap-2 mb-2">
-        <span class="material-icons text-[#0c77f2] text-xl">developer_board</span>
-        <h4 class="font-semibold text-black text-sm" data-translate="containerization">Containerization</h4>
+    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
+      <div class="flex flex-col items-center gap-3 mb-3">
+        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-xl group-hover:scale-110 transition-transform">
+          <span class="material-icons text-white text-3xl">visibility</span>
+        </div>
+        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="monitoring-observability">Monitoring & Observability</h5>
       </div>
-      <p class="text-xs text-gray-600">Docker, Kubernetes, OpenShift</p>
+      <p class="text-sm text-gray-600 font-medium">Prometheus · Grafana · ELK Stack</p>
     </div>
-    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow text-center">
-      <div class="flex flex-col items-center gap-2 mb-2">
-        <span class="material-icons text-[#0c77f2] text-xl">code</span>
-        <h4 class="font-semibold text-black text-sm" data-translate="iac">Infrastructure as Code</h4>
+    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
+      <div class="flex flex-col items-center gap-3 mb-3">
+        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-400 to-rose-500 shadow-xl group-hover:scale-110 transition-transform">
+          <span class="material-icons text-white text-3xl">developer_board</span>
+        </div>
+        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="containerization">Containerization</h5>
       </div>
-      <p class="text-xs text-gray-600">Terraform, CloudFormation, ARM</p>
+      <p class="text-sm text-gray-600 font-medium">Docker · Kubernetes · OpenShift</p>
     </div>
-    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow text-center">
-      <div class="flex flex-col items-center gap-2 mb-2">
-        <span class="material-icons text-[#0c77f2] text-xl">sync</span>
-        <h4 class="font-semibold text-black text-sm" data-translate="cicd">CI/CD Pipelines</h4>
+    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
+      <div class="flex flex-col items-center gap-3 mb-3">
+        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 shadow-xl group-hover:scale-110 transition-transform">
+          <span class="material-icons text-white text-3xl">code</span>
+        </div>
+        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="iac">Infrastructure as Code</h5>
       </div>
-      <p class="text-xs text-gray-600">GitHub Actions, Azure DevOps</p>
+      <p class="text-sm text-gray-600 font-medium">Terraform · CloudFormation · ARM</p>
+    </div>
+    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
+      <div class="flex flex-col items-center gap-3 mb-3">
+        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-400 to-purple-600 shadow-xl group-hover:scale-110 transition-transform">
+          <span class="material-icons text-white text-3xl">sync</span>
+        </div>
+        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="cicd">CI/CD Pipelines</h5>
+      </div>
+      <p class="text-sm text-gray-600 font-medium">GitHub Actions · Azure DevOps</p>
     </div>
   </div>
 
   <!-- CTA Buttons -->
-  <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a href="experience.html" class="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0c77f2] px-6 py-3 text-white font-medium hover:bg-blue-600 transition-colors">
-      <span class="material-icons">work</span>
-      <span data-translate="view-experience">View Full Experience</span>
+  <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12 fade-in-up delay-400">
+    <a href="experience.html" class="btn-gradient inline-flex items-center justify-center gap-3 rounded-xl px-8 py-4 text-white font-bold text-base shadow-2xl w-full sm:w-auto">
+      <span class="material-icons text-xl">work</span>
+      <span data-translate="view-experience">Ver Experiencia Completa</span>
     </a>
-    <a href="contact.html" class="inline-flex items-center justify-center gap-2 rounded-lg border border-[#0c77f2] px-6 py-3 text-[#0c77f2] font-medium hover:bg-[#0c77f2] hover:text-white transition-colors">
-      <span class="material-icons">email</span>
-      <span data-translate="contact-me">Contact Me</span>
+    <a href="contact.html" class="btn-outline-gradient inline-flex items-center justify-center gap-3 rounded-xl px-8 py-4 font-bold text-base w-full sm:w-auto">
+      <span class="material-icons text-xl">email</span>
+      <span data-translate="contact-me">Contáctame</span>
     </a>  </div>
 </section>
 
 </div>
 </main>
 
-<footer class="border-t border-solid border-t-[#e5e7eb] px-4 sm:px-10 py-6 sm:py-8 mt-8 sm:mt-10 md:mt-12" role="contentinfo">
-<div class="flex flex-col items-center gap-4 sm:gap-6">
+<footer class="glass-card mt-16 sm:mt-20 md:mt-24 px-4 sm:px-10 py-8 sm:py-12 fade-in-up delay-500" role="contentinfo">
+<div class="flex flex-col items-center gap-6 sm:gap-8">
+<div class="flex items-center gap-3">
+<svg class="h-8 w-8 sm:h-10 sm:w-10" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_footer)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="url(#gradient-footer)" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clipPath id="clip0_footer"><rect fill="white" height="48" width="48"></rect></clipPath>
+<linearGradient id="gradient-footer" x1="0" y1="0" x2="48" y2="48">
+<stop offset="0%" stop-color="#667eea"/>
+<stop offset="100%" stop-color="#764ba2"/>
+</linearGradient>
+</defs>
+</svg>
+<h2 class="text-2xl font-black gradient-text" style="font-family: 'Space Grotesk', sans-serif;">Marc Ràfols</h2>
+</div>
 <nav aria-label="Social media links">
-<ul class="flex justify-center gap-4 sm:gap-6" role="list">
+<ul class="flex justify-center gap-4" role="list">
 <li>
-<a aria-label="GitHub Profile" class="flex items-center justify-center rounded-full h-10 w-10 sm:h-12 sm:w-12 bg-gray-100 text-black hover:bg-[#0c77f2] hover:text-white hover:scale-110 active:scale-95 transition-all duration-200 focus-visible" href="https://github.com/mrafols" target="_blank" rel="noopener noreferrer">
-<svg fill="currentColor" height="18px" width="18px" viewBox="0 0 256 256" class="sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<a aria-label="GitHub Profile" class="flex items-center justify-center rounded-2xl h-14 w-14 glass-card hover-lift group" href="https://github.com/mrafols" target="_blank" rel="noopener noreferrer">
+<svg fill="currentColor" height="24px" width="24px" viewBox="0 0 256 256" class="group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="fill: url(#gradient-github)">
+<defs>
+<linearGradient id="gradient-github" x1="0" y1="0" x2="256" y2="256">
+<stop offset="0%" stop-color="#667eea"/>
+<stop offset="100%" stop-color="#764ba2"/>
+</linearGradient>
+</defs>
 <path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58a43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path>
 </svg>
 </a>
 </li>
 <li>
-<a aria-label="LinkedIn Profile" class="flex items-center justify-center rounded-full h-10 w-10 sm:h-12 sm:w-12 bg-gray-100 text-black hover:bg-[#0c77f2] hover:text-white hover:scale-110 active:scale-95 transition-all duration-200 focus-visible" href="https://www.linkedin.com/in/marcrafols/" target="_blank" rel="noopener noreferrer">
-<svg fill="currentColor" height="18px" width="18px" viewBox="0 0 256 256" class="sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<a aria-label="LinkedIn Profile" class="flex items-center justify-center rounded-2xl h-14 w-14 glass-card hover-lift group" href="https://www.linkedin.com/in/marcrafols/" target="_blank" rel="noopener noreferrer">
+<svg fill="currentColor" height="24px" width="24px" viewBox="0 0 256 256" class="group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="fill: url(#gradient-linkedin)">
+<defs>
+<linearGradient id="gradient-linkedin" x1="0" y1="0" x2="256" y2="256">
+<stop offset="0%" stop-color="#4facfe"/>
+<stop offset="100%" stop-color="#00f2fe"/>
+</linearGradient>
+</defs>
 <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
 </svg>
 </a>
 </li>
 </ul>
 </nav>
-<p class="text-xs sm:text-sm text-gray-600 text-center" data-translate="copyright">© 2024 Marc Ràfols Ibáñez. All rights reserved.</p>
+<p class="text-sm text-gray-600 text-center font-medium" data-translate="copyright">© 2025 Marc Ràfols Ibáñez. Todos los derechos reservados.</p>
 </div>
 </footer>
 </div>
