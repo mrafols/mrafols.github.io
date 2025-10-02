@@ -171,22 +171,24 @@ body {
 
 .profile-glow {
   position: relative;
+  z-index: 1;
 }
 
 .profile-glow::before {
   content: '';
   position: absolute;
-  inset: -8px;
+  inset: -4px;
   border-radius: 50%;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  opacity: 0.3;
-  filter: blur(20px);
+  opacity: 0.4;
+  filter: blur(12px);
   animation: pulse 3s ease-in-out infinite;
+  z-index: -1;
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.3; transform: scale(0.95); }
-  50% { opacity: 0.5; transform: scale(1.05); }
+  0%, 100% { opacity: 0.35; transform: scale(0.98); }
+  50% { opacity: 0.5; transform: scale(1.02); }
 }
 
 .hover-lift {
