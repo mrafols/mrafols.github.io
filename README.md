@@ -1,67 +1,170 @@
-# Marc Ràfols Ibáñez - Sitio Web Personal
+# Marc Ràfols Ibáñez - Portfolio Profesional
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Publicado-success)](https://mrafols.github.io)
-[![Actualización](https://img.shields.io/badge/Última%20Actualización-Mayo%202025-blue)]()
+Portfolio profesional bilingüe (Español/Inglés) de Marc Ràfols Ibáñez, DevOps Engineer & Scrum Master. Diseño moderno, interactivo y completamente responsive. Implementado como Progressive Web App (PWA) con soporte para instalación en dispositivos.
 
-Este repositorio contiene el código fuente de mi sitio web personal y portfolio profesional, alojado a través de GitHub Pages.
+## 🚀 Características
 
-## 🚀 Descripción
+### Diseño y UX
+- **Diseño Moderno**: Interfaz limpia con efectos glassmorphism y gradientes
+- **Responsive**: Optimizado para todos los dispositivos (móvil, tablet, desktop)
+- **Dark Mode**: Diseño elegante en modo oscuro permanente
+- **Animaciones Suaves**: Transiciones y efectos visuales elegantes
+- **Parallax Effect**: Efecto parallax en la sección hero
+- **Tilt Cards**: Efecto 3D en tarjetas al pasar el mouse
+- **Custom Cursor**: Cursor personalizado para desktop
+- **Particle Background**: Fondo animado con partículas flotantes
 
-Un sitio web personal diseñado para mostrar mi experiencia profesional como DevOps Engineer y Site Reliability Engineer (SRE), con más de 15 años de experiencia en infraestructura, cloud computing y formación técnica.
+### Funcionalidad
+- **Bilingüe**: Español e Inglés con cambio dinámico
+- **PWA**: Instalable como aplicación nativa
+- **Service Worker**: Cache offline para acceso sin conexión
+- **Smooth Scroll**: Navegación suave entre secciones
+- **Active Section Highlighting**: Resaltado de sección activa en navbar
+- **Contact Form**: Formulario de contacto funcional
+- **Copy to Clipboard**: Copia email con Ctrl/Cmd + Click
+- **Stats Counter**: Animación de contadores en sección About
+- **Lazy Loading**: Carga optimizada de imágenes
+- **Easter Egg**: Código Konami secreto 🎮
 
-## 💻 Tecnologías Utilizadas
+### Rendimiento
+- **Optimizado**: CSS minificado y JavaScript modular
+- **Cache Strategy**: Network-first con fallback a cache
+- **Preload Critical Assets**: Precarga de recursos críticos
+- **Intersection Observer**: Detección eficiente de elementos visibles
+- **RequestAnimationFrame**: Animaciones optimizadas
 
-- HTML5 / CSS3
-- JavaScript (con Typed.js para animaciones de texto)
-- Bootstrap 5
-- AOS (Animate On Scroll)
-- FontAwesome y Boxicons para iconos
-
-## 📋 Secciones del Sitio
-
-- **Inicio**: Presentación y enlaces a redes sociales
-- **Sobre Mí**: Información personal y profesional
-- **Intereses**: Áreas de interés profesional y personal
-- **Habilidades**: Competencias técnicas con niveles de dominio
-- **Currículum**: Experiencia laboral y formación académica
-
-## 🔧 Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
-assets/
-  ├── css/        # Hojas de estilo personalizadas
-  ├── img/        # Imágenes del sitio
-  ├── js/         # JavaScript personalizado
-  └── vendor/     # Librerías de terceros (Bootstrap, AOS, etc.)
-index.html        # Página principal del sitio
+mrafols.github.io/
+├── index.html              # Página principal
+├── styles.css              # Estilos CSS
+├── script.js               # JavaScript funcional
+├── manifest.json           # PWA manifest
+├── service-worker.js       # Service Worker para PWA
+├── README.md               # Documentación
+├── Curriculum vitae Marc Ràfols Ibáñez.pdf
+└── assets/
+    └── img/
+        ├── profile-img.jpg
+        ├── hero-bg.jpg
+        ├── favicon.png
+        ├── apple-touch-icon.png
+        ├── icon-192x192.png
+        ├── icon-512x512.png
+        └── companies/
+            ├── hornetsecurity.png
+            ├── leadtech-group.png
+            ├── privalia.png
+            ├── social-point.png
+            └── ...
 ```
 
-## 🌐 Visitar el Sitio
+## 🛠️ Tecnologías Utilizadas
 
-El sitio está disponible en: [https://mrafols.github.io](https://mrafols.github.io)
+- **HTML5**: Estructura semántica
+- **CSS3**: Variables CSS, Grid, Flexbox, Animations
+- **JavaScript (Vanilla)**: Sin dependencias externas
+- **PWA**: Service Worker, Web App Manifest
+- **Font Awesome**: Iconos
+- **Google Fonts**: Inter y Fira Code
 
-## 📞 Contacto
+## 🎨 Personalización
 
-- Email: [marc@marcrafols.com](mailto:marc@marcrafols.com)
-- LinkedIn: [marcrafols](https://www.linkedin.com/in/marcrafols/)
-- GitHub: [mrafols](https://github.com/mrafols)
-- Twitter: [marknes86](https://twitter.com/marknes86)
+### Colores
+Los colores se definen mediante variables CSS en `:root` y `[data-theme="dark"]`:
 
-## ⚙️ Despliegue Local
-
-Para ejecutar este sitio localmente:
-
-1. Clona el repositorio: `git clone https://github.com/mrafols/mrafols.github.io.git`
-2. Navega hasta el directorio: `cd mrafols.github.io`
-3. Abre `index.html` en tu navegador preferido
-
-Alternativamente, puedes usar Docker:
-```bash
-docker build -t mrafols-site .
-docker run -p 8080:80 mrafols-site
+```css
+:root {
+    --bg-primary: #ffffff;
+    --text-primary: #0a192f;
+    --accent-primary: #64ffda;
+    --accent-secondary: #5a67d8;
+    /* ... */
+}
 ```
-Y visita `http://localhost:8080` en tu navegador.
+
+### Contenido
+Edita `index.html` para modificar:
+- Información personal
+- Experiencia laboral
+- Habilidades
+- Información de contacto
+
+### Traducciones
+Los textos bilingües usan atributos `data-es` y `data-en`:
+
+```html
+<h2 data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
+```
+
+## 🚀 Despliegue
+
+### GitHub Pages
+1. Sube los archivos al repositorio `username.github.io`
+2. Configura GitHub Pages en Settings
+3. Tu portfolio estará disponible en `https://username.github.io`
+
+### Otro Hosting
+Simplemente sube todos los archivos al servidor web. El portfolio funciona sin backend.
+
+## 📱 PWA - Instalación
+
+### Desktop
+1. Abre el portfolio en Chrome/Edge
+2. Haz clic en el icono de instalación en la barra de direcciones
+3. Confirma la instalación
+
+### Mobile
+1. Abre el portfolio en Chrome/Safari
+2. Toca el botón "Compartir"
+3. Selecciona "Añadir a pantalla de inicio"
+
+## 🎯 Características Técnicas
+
+### CSS Moderno
+- CSS Grid y Flexbox para layouts
+- CSS Variables para theming
+- CSS Animations y Transitions
+- Backdrop Filter para efectos de cristal
+- Media Queries para responsive design
+
+### JavaScript Avanzado
+- Intersection Observer API
+- Local Storage para persistencia
+- Service Worker para PWA
+- Clipboard API
+- Event Delegation
+- RequestAnimationFrame
+
+### Accesibilidad
+- Etiquetas semánticas HTML5
+- ARIA labels
+- Navegación por teclado
+- Alto contraste
+- Focus states visibles
+
+## 🐛 Navegadores Soportados
+
+- Chrome 90+ ✅
+- Firefox 88+ ✅
+- Safari 14+ ✅
+- Edge 90+ ✅
+- Opera 76+ ✅
 
 ## 📄 Licencia
 
 © 2025 Marc Ràfols Ibáñez. Todos los derechos reservados.
+
+## 📞 Contacto
+
+- **Email**: marc@marcrafols.com
+- **Ubicación**: Mahón, Menorca
+- **LinkedIn**: [linkedin.com/in/marcrafols](https://linkedin.com/in/marcrafols)
+- **GitHub**: [github.com/mrafols](https://github.com/mrafols)
+
+---
+
+Hecho con ❤️ y mucho ☕
+
+

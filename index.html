@@ -1,660 +1,569 @@
-<html><head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Marc Ràfols - Site Reliability Engineer y DevOps con más de 15 años de experiencia en infraestructura cloud, automatización y arquitecturas escalables.">
-<meta name="keywords" content="DevOps, Site Reliability Engineer, SRE, Cloud Infrastructure, AWS, Azure, Terraform, Kubernetes, Docker">
-<meta name="author" content="Marc Ràfols Ibáñez">
-<meta property="og:title" content="Marc Ràfols - Site Reliability Engineer | DevOps Portfolio">
-<meta property="og:description" content="Portfolio profesional de Marc Ràfols, especialista en infraestructura cloud, DevOps y arquitecturas escalables.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://mrafols.github.io">
-<meta property="og:image" content="https://mrafols.github.io/assets/img/profile-img.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Marc Ràfols - Site Reliability Engineer | DevOps">
-<meta name="twitter:description" content="Portfolio profesional especializado en infraestructura cloud y DevOps.">
-<meta name="twitter:image" content="https://mrafols.github.io/assets/img/profile-img.jpg">
-<link rel="canonical" href="https://mrafols.github.io">
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&text=Marc%20R%C3%A0fols%20Portfolio%20Site%20Reliability%20Engineer%20DevOps" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700"/></noscript>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Icons&text=cake%2Bpublic%2Blocation_on%2Bcalendar_today%2Bschool%2Bemail%2Bcloud%2Bbuild%2Bmonitoring%2Bdeveloper_board%2Bcode%2Bsync%2Bwork" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons"/></noscript>
-<link href="/assets/css/style.css" rel="stylesheet"/>
-<title>Marc Ràfols - Portfolio</title>
-<!-- Favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-<!-- PWA Manifest -->
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0c77f2">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Marc Ràfols Portfolio">
-<link rel="apple-touch-icon" href="/assets/img/icon-192x192.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="167x167" href="/assets/img/apple-touch-icon-167x167.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style>
-:root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-
-* {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #667eea10 0%, #764ba210 50%, #4facfe10 100%);
-  background-attachment: fixed;
-}
-
-/* Animated background */
-.animated-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.5;
-}
-
-.animated-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 40% 20%, rgba(79, 172, 254, 0.08) 0%, transparent 50%);
-  animation: bgMove 20s ease-in-out infinite;
-}
-
-@keyframes bgMove {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-20px) scale(1.1); }
-}
-
-.language-switcher button {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 600;
-  border-radius: 8px;
-  min-width: 44px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.language-switcher button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.language-switcher button span {
-  position: relative;
-  z-index: 1;
-}
-
-.language-switcher button.active::before {
-  opacity: 1;
-}
-
-.language-switcher button.active {
-  color: white;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-  transform: translateY(-1px);
-}
-
-.language-switcher button:not(.active):hover {
-  background-color: #f3f4f6;
-  color: #667eea;
-  transform: translateY(-1px);
-}
-
-.language-switcher {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(102, 126, 234, 0.2);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 4px;
-}
-
-/* Glass morphism effect */
-.glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-blue {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Hover lift effect */
-.hover-lift {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hover-lift:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Animated gradient border */
-@keyframes gradientRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.gradient-border {
-  position: relative;
-  background: white;
-}
-
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(135deg, #667eea, #764ba2, #4facfe, #00f2fe);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: gradientRotate 3s linear infinite;
-  z-index: -1;
-}
-
-/* Floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-.float-animation {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Fade in animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.delay-100 { animation-delay: 0.1s; opacity: 0; }
-.delay-200 { animation-delay: 0.2s; opacity: 0; }
-.delay-300 { animation-delay: 0.3s; opacity: 0; }
-.delay-400 { animation-delay: 0.4s; opacity: 0; }
-.delay-500 { animation-delay: 0.5s; opacity: 0; }
-
-/* Profile image glow */
-.profile-glow {
-  position: relative;
-  z-index: 1;
-}
-
-.profile-glow::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  opacity: 0.4;
-  filter: blur(12px);
-  animation: pulse 3s ease-in-out infinite;
-  z-index: -1;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.35; transform: scale(0.98); }
-  50% { opacity: 0.5; transform: scale(1.02); }
-}
-
-/* Skill card hover effects */
-.skill-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.skill-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-  transition: left 0.5s;
-}
-
-.skill-card:hover::before {
-  left: 100%;
-}
-
-.skill-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
-}
-
-/* Button gradient */
-.btn-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-gradient::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
-}
-
-.btn-gradient:hover::before {
-  left: 100%;
-}
-
-.btn-gradient:hover {
-  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
-  transform: translateY(-2px);
-}
-
-.btn-outline-gradient {
-  background: transparent;
-  border: 2px solid transparent;
-  background-image: linear-gradient(white, white), 
-                    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  color: #667eea;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-gradient:hover {
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%), 
-                    linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
-}
-
-/* Screen reader only content */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Focus visible for better keyboard navigation */
-.focus-visible:focus {
-  outline: 2px solid #667eea;
-  outline-offset: 2px;
-}
-
-/* Skip link for accessibility */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 8px;
-  text-decoration: none;
-  z-index: 1000;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-.skip-link:focus {
-  top: 6px;
-}
-
-/* Section title decorative elements */
-.section-title-decoration {
-  position: relative;
-  display: inline-block;
-}
-
-.section-title-decoration::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
-  border-radius: 2px;
-}
-</style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marc Ràfols Ibáñez - Portfolio Profesional | Professional Portfolio">
+    <meta name="theme-color" content="#0a192f">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="assets/img/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+    
+    <title>Marc Ràfols Ibáñez | Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-white relative">
-<div class="animated-bg"></div>
-<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="glass-card flex flex-col sm:flex-row items-center justify-between px-4 sm:px-10 py-4 sm:py-5 gap-4 sm:gap-0 sticky top-0 z-50 fade-in-up" role="banner">
-  <div class="flex items-center gap-3 sm:gap-4 text-black">
-    <svg class="h-6 w-6 sm:h-8 sm:w-8 gradient-text" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g clip-path="url(#clip0_6_330)">
-        <path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="url(#gradient1)" fill-rule="evenodd"></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clipPath>
-        <linearGradient id="gradient1" x1="0" y1="0" x2="48" y2="48">
-          <stop offset="0%" stop-color="#667eea"/>
-          <stop offset="100%" stop-color="#764ba2"/>
-        </linearGradient>
-      </defs>
-    </svg>
-    <h1 class="text-lg sm:text-xl font-bold tracking-tight gradient-text" data-translate="portfolio">Marc Portfolio</h1>
-  </div>
-  <nav class="flex items-center gap-3 sm:gap-6" role="navigation" aria-label="Navegación principal">
-    <div class="language-switcher flex gap-1" role="group" aria-label="Selector de idioma">
-      <button data-lang="en" class="px-3 py-2 text-sm font-bold" aria-label="Switch to English" title="English"><span>EN</span></button>
-      <button data-lang="es" class="px-3 py-2 text-sm font-bold" aria-label="Cambiar a español" title="Español"><span>ES</span></button>
+<body>
+    <!-- Language Toggle -->
+    <div class="controls">
+        <button id="lang-toggle" class="control-btn" aria-label="Toggle language">
+            <span class="lang-text">EN</span>
+        </button>
     </div>
-    <a class="gradient-text text-sm sm:text-base font-semibold leading-normal" href="index.html" data-translate="about">About</a>
-    <a class="text-gray-700 hover:text-purple-600 text-sm sm:text-base font-semibold leading-normal transition-all" href="experience.html" data-translate="experience">Experience</a>
-    <a class="text-gray-700 hover:text-purple-600 text-sm sm:text-base font-semibold leading-normal transition-all" href="contact.html" data-translate="contact">Contact</a>
-    <div class="profile-glow bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8 sm:size-10 ring-2 ring-purple-400 ring-offset-2" style='background-image: url("/assets/img/profile-img.jpg");' loading="lazy" aria-label="Foto de perfil de Marc Ràfols"></div>
-  </nav>
-</header>
 
-<main class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-4 sm:py-8 lg:py-12" role="main" id="main-content">
-<div class="layout-content-container flex flex-col max-w-4xl flex-1">
-
-<!-- Hero Section -->
-<section class="flex flex-col md:flex-row gap-8 md:gap-16 items-center md:items-center p-2 sm:p-4 py-12 sm:py-16 @container fade-in-up delay-100" aria-labelledby="hero-title">
-<div class="profile-glow bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-44 w-44 sm:min-h-52 sm:w-52 md:min-h-64 md:w-64 shadow-2xl ring-4 ring-purple-400 ring-offset-4 float-animation" style='background-image: url("/assets/img/profile-img.jpg");' loading="lazy" role="img" aria-label="Foto de perfil de Marc Ràfols"></div>
-<div class="flex flex-col items-center md:items-start gap-4 text-center md:text-left flex-1">
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-semibold gradient-text mb-2">
-  <span class="relative flex h-3 w-3">
-    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-    <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
-  </span>
-  <span>Disponible para colaborar</span>
-</div>
-<h2 class="text-black text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight" id="hero-title" data-translate="hero-title" style="font-family: 'Space Grotesk', sans-serif;">Hi, I'm <span class="gradient-text">Marc</span></h2>
-<p class="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text-blue" data-translate="hero-subtitle" style="font-family: 'Space Grotesk', sans-serif;">Site Reliability Engineer</p>
-<p class="text-gray-600 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-xl" data-translate="hero-description">Especializado en infraestructura cloud, automatización y arquitecturas escalables. Con más de 15 años de experiencia en tecnología transformando ideas en soluciones robustas.</p>
-<div class="flex flex-col sm:flex-row gap-4 mt-4">
-  <a href="#skills" class="btn-gradient inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-white font-bold text-base shadow-xl">
-    <span class="material-icons">rocket_launch</span>
-    <span data-translate="explore-skills">Ver Habilidades</span>
-  </a>
-  <a href="contact.html" class="btn-outline-gradient inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold text-base">
-    <span class="material-icons">mail</span>
-    <span data-translate="contact-me">Contactar</span>
-  </a>
-</div>
-</div>
-</section>
-
-<!-- About Section -->
-<section class="mt-12 sm:mt-16 md:mt-20 px-2 sm:px-4 fade-in-up delay-200" aria-labelledby="about-title">
-  <h3 class="text-3xl sm:text-4xl font-black text-black mb-8 section-title-decoration" id="about-title" style="font-family: 'Space Grotesk', sans-serif;">
-    <span data-translate="about-me">Sobre Mí</span>
-  </h3>  
-  <!-- Info Grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8" role="list" aria-label="Información personal">
-    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group" role="listitem">
-      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg group-hover:scale-110 transition-transform">
-        <span class="material-icons text-white text-xl" aria-hidden="true">cake</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="birthday">Cumpleaños</span>
-        <span class="text-gray-900 font-bold text-sm sm:text-base" data-translate="birthday-value">21 Diciembre 1986</span>
-      </div>
-    </div>
-    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group" role="listitem">
-      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-cyan-500 shadow-lg group-hover:scale-110 transition-transform">
-        <span class="material-icons text-white text-xl" aria-hidden="true">public</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="website">Sitio Web</span>
-        <a href="https://www.marcrafols.com" class="gradient-text-blue hover:underline text-sm sm:text-base font-bold" target="_blank">www.marcrafols.com</a>
-      </div>
-    </div>
-    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group">
-      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 shadow-lg group-hover:scale-110 transition-transform">
-        <span class="material-icons text-white text-xl">location_on</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="city">Ciudad</span>
-        <span class="text-gray-900 font-bold text-sm sm:text-base" data-translate="city-value">Menorca, España</span>
-      </div>
-    </div>
-    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group">
-      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-lg group-hover:scale-110 transition-transform">
-        <span class="material-icons text-white text-xl">calendar_today</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="age">Edad</span>
-        <span class="text-gray-900 font-bold text-sm sm:text-base">38 años</span>
-      </div>
-    </div>
-    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group">
-      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg group-hover:scale-110 transition-transform">
-        <span class="material-icons text-white text-xl">school</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="degree">Titulación</span>
-        <span class="text-gray-900 font-bold text-sm sm:text-base" data-translate="degree-value">Multimedia & Digital Interaction</span>
-      </div>
-    </div>
-    <div class="flex items-center gap-4 glass-card rounded-2xl px-4 sm:px-5 py-4 hover-lift group">
-      <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-600 shadow-lg group-hover:scale-110 transition-transform">
-        <span class="material-icons text-white text-xl">email</span>
-      </div>
-      <div class="flex flex-col">
-        <span class="text-gray-500 font-medium text-xs uppercase tracking-wide" data-translate="email">Email</span>
-        <a href="mailto:marc@marcrafols.com" class="gradient-text hover:underline text-sm sm:text-base font-bold">marc@marcrafols.com</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- About Description -->
-  <div class="glass-card rounded-3xl p-6 sm:p-8 mb-10 hover-lift">
-    <div class="flex items-start gap-4 mb-4">
-      <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 shadow-xl">
-        <span class="material-icons text-white text-2xl">person</span>
-      </div>
-      <div class="flex-1">
-        <p class="text-gray-700 text-base sm:text-lg font-medium leading-relaxed mb-4" data-translate="about-description">
-          Soy un Site Reliability Engineer con más de 15 años de experiencia en tecnología, especializado en infraestructura cloud, DevOps y arquitecturas escalables. Actualmente trabajo en Leadtech Group, donde lidero iniciativas de migración a la nube e implementación de prácticas DevSecOps.
-        </p>
-        <p class="text-gray-700 text-base sm:text-lg font-medium leading-relaxed" data-translate="experience-passion">
-          Mi pasión por la tecnología me ha llevado a trabajar en empresas innovadoras como Social Point, Incubio y Qustodio, donde he gestionado infraestructuras que soportan millones de usuarios. También tengo experiencia docente, habiendo sido profesor en Monlau y la UPC.
-        </p>
-      </div>
-    </div>
-  </div>  <!-- Skills Section -->
-  <section aria-labelledby="skills-title" id="skills" class="fade-in-up delay-300">
-  <h4 class="text-3xl sm:text-4xl font-black text-black mb-10 section-title-decoration" id="skills-title" data-translate="skills-title" style="font-family: 'Space Grotesk', sans-serif;">Habilidades Técnicas</h4>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12" role="list" aria-label="Habilidades técnicas">
-    <div class="skill-card glass-card rounded-2xl p-6 text-center group" role="listitem">
-      <div class="flex flex-col items-center gap-3 mb-3">
-        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 shadow-xl group-hover:scale-110 transition-transform">
-          <span class="material-icons text-white text-3xl" aria-hidden="true">cloud</span>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">M<span class="logo-accent">R</span></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li><a href="#about" class="nav-link" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
+                <li><a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+                <li><a href="#skills" class="nav-link" data-es="Habilidades" data-en="Skills">Habilidades</a></li>
+                <li><a href="#education" class="nav-link" data-es="Formación" data-en="Education">Formación</a></li>
+                <li><a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="cloud-infrastructure">Cloud Infrastructure</h5>
-      </div>
-      <p class="text-sm text-gray-600 font-medium">AWS · Azure · OpenStack · Terraform</p>
-    </div>
-    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
-      <div class="flex flex-col items-center gap-3 mb-3">
-        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-indigo-500 shadow-xl group-hover:scale-110 transition-transform">
-          <span class="material-icons text-white text-3xl">build</span>
-        </div>
-        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="devops-automation">DevOps & Automation</h5>
-      </div>
-      <p class="text-sm text-gray-600 font-medium">Jenkins · Ansible · Puppet · GitLab CI</p>
-    </div>
-    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
-      <div class="flex flex-col items-center gap-3 mb-3">
-        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-xl group-hover:scale-110 transition-transform">
-          <span class="material-icons text-white text-3xl">visibility</span>
-        </div>
-        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="monitoring-observability">Monitoring & Observability</h5>
-      </div>
-      <p class="text-sm text-gray-600 font-medium">Prometheus · Grafana · ELK Stack</p>
-    </div>
-    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
-      <div class="flex flex-col items-center gap-3 mb-3">
-        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-400 to-rose-500 shadow-xl group-hover:scale-110 transition-transform">
-          <span class="material-icons text-white text-3xl">developer_board</span>
-        </div>
-        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="containerization">Containerization</h5>
-      </div>
-      <p class="text-sm text-gray-600 font-medium">Docker · Kubernetes · OpenShift</p>
-    </div>
-    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
-      <div class="flex flex-col items-center gap-3 mb-3">
-        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 shadow-xl group-hover:scale-110 transition-transform">
-          <span class="material-icons text-white text-3xl">code</span>
-        </div>
-        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="iac">Infrastructure as Code</h5>
-      </div>
-      <p class="text-sm text-gray-600 font-medium">Terraform · CloudFormation · ARM</p>
-    </div>
-    <div class="skill-card glass-card rounded-2xl p-6 text-center group">
-      <div class="flex flex-col items-center gap-3 mb-3">
-        <div class="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-400 to-purple-600 shadow-xl group-hover:scale-110 transition-transform">
-          <span class="material-icons text-white text-3xl">sync</span>
-        </div>
-        <h5 class="font-bold text-gray-900 text-base sm:text-lg" data-translate="cicd">CI/CD Pipelines</h5>
-      </div>
-      <p class="text-sm text-gray-600 font-medium">GitHub Actions · Azure DevOps</p>
-    </div>
-  </div>
+    </nav>
 
-  <!-- CTA Buttons -->
-  <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12 fade-in-up delay-400">
-    <a href="experience.html" class="btn-gradient inline-flex items-center justify-center gap-3 rounded-xl px-8 py-4 text-white font-bold text-base shadow-2xl w-full sm:w-auto">
-      <span class="material-icons text-xl">work</span>
-      <span data-translate="view-experience">Ver Experiencia Completa</span>
-    </a>
-    <a href="contact.html" class="btn-outline-gradient inline-flex items-center justify-center gap-3 rounded-xl px-8 py-4 font-bold text-base w-full sm:w-auto">
-      <span class="material-icons text-xl">email</span>
-      <span data-translate="contact-me">Contáctame</span>
-    </a>  </div>
-</section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting" data-es="Hola, soy" data-en="Hi, I'm">Hola, soy</p>
+                <h1 class="hero-name">Marc Ràfols Ibáñez</h1>
+                <h2 class="hero-title" data-es="DevOps Engineer & Scrum Master" data-en="DevOps Engineer & Scrum Master">
+                    DevOps Engineer & Scrum Master
+                </h2>
+                <p class="hero-description" data-es="Especialista en automatización, cloud computing y gestión ágil de proyectos. Combino experiencia técnica con habilidades de liderazgo y educación." data-en="Specialist in automation, cloud computing and agile project management. I combine technical expertise with leadership and education skills.">
+                    Especialista en automatización, cloud computing y gestión ágil de proyectos. Combino experiencia técnica con habilidades de liderazgo y educación.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary" data-es="Contáctame" data-en="Contact Me">Contáctame</a>
+                    <a href="#experience" class="btn btn-secondary" data-es="Ver Experiencia" data-en="View Experience">Ver Experiencia</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-wrapper">
+                    <img src="assets/img/profile-img.jpg" alt="Marc Ràfols Ibáñez" class="profile-img">
+                    <div class="profile-ring"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
 
-</div>
-</main>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description" data-es="Soy Site Reliability Engineer con más de 19 años de experiencia en administración de sistemas, automatización y cloud computing. Mi trayectoria profesional abarca desde roles junior hasta posiciones de liderazgo técnico, trabajando con empresas de alto perfil en sectores como e-commerce, gaming, media y seguridad." data-en="I'm a Site Reliability Engineer with over 19 years of experience in systems administration, automation and cloud computing. My professional career spans from junior roles to technical leadership positions, working with high-profile companies in sectors such as e-commerce, gaming, media and security.">
+                        Soy Site Reliability Engineer con más de 19 años de experiencia en administración de sistemas, automatización y cloud computing. Mi trayectoria profesional abarca desde roles junior hasta posiciones de liderazgo técnico, trabajando con empresas de alto perfil en sectores como e-commerce, gaming, media y seguridad.
+                    </p>
+                    <p class="about-description" data-es="Especializado en automatización (Ansible, Terraform, Puppet, Jenkins), multi-cloud (AWS, Google Cloud, Azure) y metodologías ágiles. He gestionado infraestructuras de alto tráfico, liderado equipos DevOps y formado a profesionales en la UPC y Monlau. Mi pasión por la enseñanza complementa mi experiencia técnica, permitiéndome compartir conocimientos y mentorar a nuevas generaciones de profesionales IT." data-en="Specialized in automation (Ansible, Terraform, Puppet, Jenkins), multi-cloud (AWS, Google Cloud, Azure) and agile methodologies. I've managed high-traffic infrastructures, led DevOps teams and trained professionals at UPC and Monlau. My passion for teaching complements my technical expertise, allowing me to share knowledge and mentor new generations of IT professionals.">
+                        Especializado en automatización (Ansible, Terraform, Puppet, Jenkins), multi-cloud (AWS, Google Cloud, Azure) y metodologías ágiles. He gestionado infraestructuras de alto tráfico, liderado equipos DevOps y formado a profesionales en la UPC y Monlau. Mi pasión por la enseñanza complementa mi experiencia técnica, permitiéndome compartir conocimientos y mentorar a nuevas generaciones de profesionales IT.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">19+</span>
+                            <span class="stat-label" data-es="Años de Experiencia" data-en="Years Experience">Años de Experiencia</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">13</span>
+                            <span class="stat-label" data-es="Empresas" data-en="Companies">Empresas</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label" data-es="Certificaciones" data-en="Certifications">Certificaciones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer class="glass-card mt-16 sm:mt-20 md:mt-24 px-4 sm:px-10 py-8 sm:py-12 fade-in-up delay-500" role="contentinfo">
-<div class="flex flex-col items-center gap-6 sm:gap-8">
-<div class="flex items-center gap-3">
-<svg class="h-8 w-8 sm:h-10 sm:w-10" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_footer)">
-<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="url(#gradient-footer)" fill-rule="evenodd"></path>
-</g>
-<defs>
-<clipPath id="clip0_footer"><rect fill="white" height="48" width="48"></rect></clipPath>
-<linearGradient id="gradient-footer" x1="0" y1="0" x2="48" y2="48">
-<stop offset="0%" stop-color="#667eea"/>
-<stop offset="100%" stop-color="#764ba2"/>
-</linearGradient>
-</defs>
-</svg>
-<h2 class="text-2xl font-black gradient-text" style="font-family: 'Space Grotesk', sans-serif;">Marc Ràfols</h2>
-</div>
-<nav aria-label="Social media links">
-<ul class="flex justify-center gap-4" role="list">
-<li>
-<a aria-label="GitHub Profile" class="flex items-center justify-center rounded-2xl h-14 w-14 glass-card hover-lift group" href="https://github.com/mrafols" target="_blank" rel="noopener noreferrer">
-<svg fill="currentColor" height="24px" width="24px" viewBox="0 0 256 256" class="group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="fill: url(#gradient-github)">
-<defs>
-<linearGradient id="gradient-github" x1="0" y1="0" x2="256" y2="256">
-<stop offset="0%" stop-color="#667eea"/>
-<stop offset="100%" stop-color="#764ba2"/>
-</linearGradient>
-</defs>
-<path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58a43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path>
-</svg>
-</a>
-</li>
-<li>
-<a aria-label="LinkedIn Profile" class="flex items-center justify-center rounded-2xl h-14 w-14 glass-card hover-lift group" href="https://www.linkedin.com/in/marcrafols/" target="_blank" rel="noopener noreferrer">
-<svg fill="currentColor" height="24px" width="24px" viewBox="0 0 256 256" class="group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="fill: url(#gradient-linkedin)">
-<defs>
-<linearGradient id="gradient-linkedin" x1="0" y1="0" x2="256" y2="256">
-<stop offset="0%" stop-color="#4facfe"/>
-<stop offset="100%" stop-color="#00f2fe"/>
-</linearGradient>
-</defs>
-<path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
-</svg>
-</a>
-</li>
-</ul>
-</nav>
-<p class="text-sm text-gray-600 text-center font-medium" data-translate="copyright">© 2025 Marc Ràfols Ibáñez. Todos los derechos reservados.</p>
-</div>
-</footer>
-</div>
-</div>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title" data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/leadtech-group.png" alt="Leadtech Group">
+                        </div>
+                        <h3 class="timeline-title">Site Reliability Engineer | DevOps</h3>
+                        <h4 class="timeline-company">Leadtech Group</h4>
+                        <p class="timeline-period" data-es="Sep 2021 - Presente · 4 años 2 meses" data-en="Sep 2021 - Present · 4 years 2 months">Sep 2021 - Presente · 4 años 2 meses</p>
+                        <p class="timeline-description" data-es="Automatización de sistemas operativos con Ansible, Terraform y Jenkins. Administración de entornos AWS en producción y desarrollo. Gestión de entornos LAMP, bases de datos MySQL/NoSQL, sistemas de colas (Elasticache) y monitorización con Datadog. Trabajo remoto desde Mahón, Islas Baleares." data-en="Operating system automation with Ansible, Terraform and Jenkins. Management of AWS environments in production and development. Management of LAMP environments, MySQL/NoSQL databases, queue systems (Elasticache) and monitoring with Datadog. Remote work from Mahón, Balearic Islands.">
+                            Automatización de sistemas operativos con Ansible, Terraform y Jenkins. Administración de entornos AWS en producción y desarrollo. Gestión de entornos LAMP, bases de datos MySQL/NoSQL, sistemas de colas (Elasticache) y monitorización con Datadog. Trabajo remoto desde Mahón, Islas Baleares.
+                        </p>
+                    </div>
+                </div>
 
-<script src="/assets/js/theme.js"></script>
-<script src="/assets/js/language.js"></script>
-<script src="/assets/js/security.js"></script>
-<script src="/assets/js/performance.js"></script>
-<script src="/assets/js/animations.js"></script>
-<script src="/assets/js/pwa.js"></script>
-</body></html>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/monlau-corporate.png" alt="Monlau Corporate">
+                        </div>
+                        <h3 class="timeline-title" data-es="Instructor Asociado" data-en="Associate Instructor">Instructor Asociado</h3>
+                        <h4 class="timeline-company">Monlau Corporate</h4>
+                        <p class="timeline-period" data-es="May 2022 - Dic 2023 · 1 año 8 meses" data-en="May 2022 - Dec 2023 · 1 year 8 months">May 2022 - Dic 2023 · 1 año 8 meses</p>
+                        <p class="timeline-description" data-es="Profesional independiente impartiendo formación corporativa especializada en tecnologías DevOps, cloud computing y metodologías ágiles. Capacitación de equipos técnicos en AWS, automatización y buenas prácticas de SRE." data-en="Independent professional providing corporate training specialized in DevOps technologies, cloud computing and agile methodologies. Technical team training in AWS, automation and SRE best practices.">
+                            Profesional independiente impartiendo formación corporativa especializada en tecnologías DevOps, cloud computing y metodologías ágiles. Capacitación de equipos técnicos en AWS, automatización y buenas prácticas de SRE.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/monlau-centro-de-estudios.png" alt="Monlau Centro de Estudios">
+                        </div>
+                        <h3 class="timeline-title" data-es="Profesor Asociado" data-en="Associate Professor">Profesor Asociado</h3>
+                        <h4 class="timeline-company">Monlau Centro de Estudios</h4>
+                        <p class="timeline-period" data-es="Jul 2019 - Jul 2021 · 2 años 1 mes" data-en="Jul 2019 - Jul 2021 · 2 years 1 month">Jul 2019 - Jul 2021 · 2 años 1 mes</p>
+                        <p class="timeline-description" data-es="Impartí asignaturas de Programación HTML/CSS, Proyectos de final de curso, Hardware, Desarrollo web y Ofimática en grado medio de informática y gestión administrativa. Gestión emocional de alumnos, orientación profesional y mentoría técnica." data-en="Taught subjects in HTML/CSS Programming, Final projects, Hardware, Web Development and Office applications in intermediate degree programs in IT and administrative management. Emotional management of students, career guidance and technical mentoring.">
+                            Impartí asignaturas de Programación HTML/CSS, Proyectos de final de curso, Hardware, Desarrollo web y Ofimática en grado medio de informática y gestión administrativa. Gestión emocional de alumnos, orientación profesional y mentoría técnica.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/fhios-smart-knowledge.png" alt="FHIOS Smart Knowledge">
+                        </div>
+                        <h3 class="timeline-title">Project Manager</h3>
+                        <h4 class="timeline-company">FHIOS Smart Knowledge</h4>
+                        <p class="timeline-period" data-es="Mar 2018 - Abr 2019 · 1 año 2 meses" data-en="Mar 2018 - Apr 2019 · 1 year 2 months">Mar 2018 - Abr 2019 · 1 año 2 meses</p>
+                        <p class="timeline-description" data-es="Gestión y promoción de proyectos IT basados en Agile. Gestión de equipos con Scrum. Coordinación de equipos de desarrollo. Administración de bases de datos MySQL/NoSQL, sistemas de colas (Elasticache) y monitorización con Nagios. Barcelona." data-en="Management and promotion of Agile-based IT projects. Team management with Scrum. Coordination of development teams. Management of MySQL/NoSQL databases, queue systems (Elasticache) and monitoring with Nagios. Barcelona.">
+                            Gestión y promoción de proyectos IT basados en Agile. Gestión de equipos con Scrum. Coordinación de equipos de desarrollo. Administración de bases de datos MySQL/NoSQL, sistemas de colas (Elasticache) y monitorización con Nagios. Barcelona.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/mediacloud.png" alt="Mdcloud - Mediacloud">
+                        </div>
+                        <h3 class="timeline-title">Project Manager</h3>
+                        <h4 class="timeline-company">Mdcloud - Mediacloud</h4>
+                        <p class="timeline-period" data-es="Ago 2016 - Mar 2018 · 1 año 8 meses" data-en="Aug 2016 - Mar 2018 · 1 year 8 months">Ago 2016 - Mar 2018 · 1 año 8 meses</p>
+                        <p class="timeline-description" data-es="Gestión de proyectos IT y coordinación de equipos técnicos. Supervisión de infraestructura cloud multi-plataforma (AWS, Google Cloud, Azure). Gestión de clientes corporativos como CTTI (Generalitat de Catalunya), IMI, Diario Público, BeIN Sports, OVERON TV. Barcelona." data-en="IT project management and technical team coordination. Multi-cloud infrastructure oversight (AWS, Google Cloud, Azure). Corporate client management including CTTI (Generalitat de Catalunya), IMI, Diario Público, BeIN Sports, OVERON TV. Barcelona.">
+                            Gestión de proyectos IT y coordinación de equipos técnicos. Supervisión de infraestructura cloud multi-plataforma (AWS, Google Cloud, Azure). Gestión de clientes corporativos como CTTI (Generalitat de Catalunya), IMI, Diario Público, BeIN Sports, OVERON TV. Barcelona.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/mediacloud.png" alt="Mdcloud - Mediacloud">
+                        </div>
+                        <h3 class="timeline-title">Site Reliability Engineer | DevOps</h3>
+                        <h4 class="timeline-company">Mdcloud - Mediacloud</h4>
+                        <p class="timeline-period" data-es="Ene 2016 - Ago 2016 · 8 meses" data-en="Jan 2016 - Aug 2016 · 8 months">Ene 2016 - Ago 2016 · 8 meses</p>
+                        <p class="timeline-description" data-es="Equipo de producción de sistemas gestionando plataformas cloud (AWS, Google Cloud, Azure). Administración de sistemas Linux y Windows. Gestión de infraestructura para plataformas de streaming y retransmisión de eventos deportivos. Monitorización y optimización de rendimiento." data-en="Systems production team managing cloud platforms (AWS, Google Cloud, Azure). Linux and Windows systems administration. Infrastructure management for streaming and sports broadcast platforms. Performance monitoring and optimization.">
+                            Equipo de producción de sistemas gestionando plataformas cloud (AWS, Google Cloud, Azure). Administración de sistemas Linux y Windows. Gestión de infraestructura para plataformas de streaming y retransmisión de eventos deportivos. Monitorización y optimización de rendimiento.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/upc.png" alt="Universitat Politècnica de Catalunya">
+                        </div>
+                        <h3 class="timeline-title" data-es="Profesor Big Data Management and Analytics" data-en="Lecturer Big Data Management and Analytics">Profesor Big Data Management and Analytics</h3>
+                        <h4 class="timeline-company">Universitat Politècnica de Catalunya (UPC)</h4>
+                        <p class="timeline-period" data-es="Sep 2015 - Ene 2016 · 5 meses" data-en="Sep 2015 - Jan 2016 · 5 months">Sep 2015 - Ene 2016 · 5 meses</p>
+                        <p class="timeline-description" data-es="Contrato de formación impartiendo docencia en el postgrado de Big Data Management and Analytics. Enseñanza de tecnologías de procesamiento masivo de datos, infraestructuras cloud y herramientas de análisis. Barcelona." data-en="Training contract teaching in the Big Data Management and Analytics postgraduate program. Teaching massive data processing technologies, cloud infrastructures and analysis tools. Barcelona.">
+                            Contrato de formación impartiendo docencia en el postgrado de Big Data Management and Analytics. Enseñanza de tecnologías de procesamiento masivo de datos, infraestructuras cloud y herramientas de análisis. Barcelona.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/incubio.png" alt="Incubio - The Big Data Academy">
+                        </div>
+                        <h3 class="timeline-title">DevOps Team Lead</h3>
+                        <h4 class="timeline-company">Incubio - The Big Data Academy</h4>
+                        <p class="timeline-period" data-es="Dic 2013 - Jul 2015 · 1 año 8 meses" data-en="Dec 2013 - Jul 2015 · 1 year 8 months">Dic 2013 - Jul 2015 · 1 año 8 meses</p>
+                        <p class="timeline-description" data-es="Liderazgo del equipo de sistemas y DevOps. Gestión de infraestructura cloud en AWS y Google Cloud. Automatización de procesos con Puppet y Ansible. Formador interno en Scrum, Agile y tecnologías cloud. Barcelona." data-en="Leadership of systems and DevOps team. Cloud infrastructure management on AWS and Google Cloud. Process automation with Puppet and Ansible. Internal trainer in Scrum, Agile and cloud technologies. Barcelona.">
+                            Liderazgo del equipo de sistemas y DevOps. Gestión de infraestructura cloud en AWS y Google Cloud. Automatización de procesos con Puppet y Ansible. Formador interno en Scrum, Agile y tecnologías cloud. Barcelona.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/incubio.png" alt="Incubio - The Big Data Academy">
+                        </div>
+                        <h3 class="timeline-title">Site Reliability Engineer | DevOps</h3>
+                        <h4 class="timeline-company">Incubio - The Big Data Academy</h4>
+                        <p class="timeline-period" data-es="May 2013 - Dic 2013 · 8 meses" data-en="May 2013 - Dec 2013 · 8 months">May 2013 - Dic 2013 · 8 meses</p>
+                        <p class="timeline-description" data-es="Administración de infraestructura cloud (AWS y Google Cloud). Implementación de automatización con Puppet y Ansible. Gestión de entornos de producción y desarrollo. Monitorización y optimización de sistemas. Barcelona." data-en="Cloud infrastructure administration (AWS and Google Cloud). Implementation of automation with Puppet and Ansible. Production and development environment management. Systems monitoring and optimization. Barcelona.">
+                            Administración de infraestructura cloud (AWS y Google Cloud). Implementación de automatización con Puppet y Ansible. Gestión de entornos de producción y desarrollo. Monitorización y optimización de sistemas. Barcelona.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/social-point.png" alt="Social Point">
+                        </div>
+                        <h3 class="timeline-title">Site Reliability Engineer | DevOps</h3>
+                        <h4 class="timeline-company">Social Point</h4>
+                        <p class="timeline-period" data-es="Ago 2011 - Abr 2013 · 1 año 9 meses" data-en="Aug 2011 - Apr 2013 · 1 year 9 months">Ago 2011 - Abr 2013 · 1 año 9 meses</p>
+                        <p class="timeline-description" data-es="Automatización de entornos cloud con Ansible, Puppet y Jenkins. Gestión de infraestructura para juegos sociales con millones de usuarios. Administración de sistemas Linux en producción. Desarrollo y automatización de despliegues. Barcelona." data-en="Cloud environment automation with Ansible, Puppet and Jenkins. Infrastructure management for social games with millions of users. Linux production systems administration. Development and deployment automation. Barcelona.">
+                            Automatización de entornos cloud con Ansible, Puppet y Jenkins. Gestión de infraestructura para juegos sociales con millones de usuarios. Administración de sistemas Linux en producción. Desarrollo y automatización de despliegues. Barcelona.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/hornetsecurity.png" alt="Hornetsecurity">
+                        </div>
+                        <h3 class="timeline-title" data-es="Administrador de Sistemas Linux Senior" data-en="Senior Linux System Administrator">Administrador de Sistemas Linux Senior</h3>
+                        <h4 class="timeline-company">Hornetsecurity</h4>
+                        <p class="timeline-period" data-es="Ene 2011 - Ago 2011 · 8 meses" data-en="Jan 2011 - Aug 2011 · 8 months">Ene 2011 - Ago 2011 · 8 meses</p>
+                        <p class="timeline-description" data-es="Administración de sistemas Linux en entornos de seguridad empresarial. Gestión de infraestructura de correo electrónico y soluciones de protección. Monitorización y mantenimiento de servicios críticos. Gestión de bases de datos y sistemas de alta disponibilidad." data-en="Linux systems administration in enterprise security environments. Email infrastructure and protection solutions management. Critical services monitoring and maintenance. Database and high availability systems management.">
+                            Administración de sistemas Linux en entornos de seguridad empresarial. Gestión de infraestructura de correo electrónico y soluciones de protección. Monitorización y mantenimiento de servicios críticos. Gestión de bases de datos y sistemas de alta disponibilidad.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/privalia.png" alt="Privalia">
+                        </div>
+                        <h3 class="timeline-title" data-es="Administrador de Sistemas Linux Senior" data-en="Senior Linux System Administrator">Administrador de Sistemas Linux Senior</h3>
+                        <h4 class="timeline-company">Privalia</h4>
+                        <p class="timeline-period" data-es="Jun 2008 - Dic 2010 · 2 años 7 meses" data-en="Jun 2008 - Dec 2010 · 2 years 7 months">Jun 2008 - Dic 2010 · 2 años 7 meses</p>
+                        <p class="timeline-description" data-es="Administración de sistemas Linux para plataforma de e-commerce de alto tráfico. Gestión de bases de datos MySQL y NoSQL. Administración de servidores web y de aplicaciones. Optimización de rendimiento y escalabilidad. Monitorización y resolución de incidencias." data-en="Linux systems administration for high-traffic e-commerce platform. MySQL and NoSQL database management. Web and application server administration. Performance and scalability optimization. Monitoring and incident resolution.">
+                            Administración de sistemas Linux para plataforma de e-commerce de alto tráfico. Gestión de bases de datos MySQL y NoSQL. Administración de servidores web y de aplicaciones. Optimización de rendimiento y escalabilidad. Monitorización y resolución de incidencias.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/ecoburo-consulting.png" alt="Ecoburo Consulting">
+                        </div>
+                        <h3 class="timeline-title" data-es="Administrador de Sistemas Junior" data-en="Junior System Administrator">Administrador de Sistemas Junior</h3>
+                        <h4 class="timeline-company">Ecoburo Consulting</h4>
+                        <p class="timeline-period" data-es="Ene 2008 - Jun 2008 · 6 meses" data-en="Jan 2008 - Jun 2008 · 6 months">Ene 2008 - Jun 2008 · 6 meses</p>
+                        <p class="timeline-description" data-es="Administración de sistemas Linux y Windows. Soporte técnico a clientes corporativos. Gestión de redes y servicios de infraestructura. Mantenimiento de servidores y backup. Documentación técnica." data-en="Linux and Windows systems administration. Corporate client technical support. Network and infrastructure services management. Server maintenance and backup. Technical documentation.">
+                            Administración de sistemas Linux y Windows. Soporte técnico a clientes corporativos. Gestión de redes y servicios de infraestructura. Mantenimiento de servidores y backup. Documentación técnica.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="assets/img/companies/saboredo-sa.png" alt="Saboredo SA">
+                        </div>
+                        <h3 class="timeline-title" data-es="Administrador de Sistemas Junior" data-en="Junior System Administrator">Administrador de Sistemas Junior</h3>
+                        <h4 class="timeline-company">Saboredo SA</h4>
+                        <p class="timeline-period" data-es="Ene 2006 - Ene 2007 · 1 año 1 mes" data-en="Jan 2006 - Jan 2007 · 1 year 1 month">Ene 2006 - Ene 2007 · 1 año 1 mes</p>
+                        <p class="timeline-description" data-es="Primera experiencia profesional en administración de sistemas. Soporte técnico, mantenimiento de equipos informáticos y redes. Gestión de copias de seguridad. Instalación y configuración de software. Atención a usuarios." data-en="First professional experience in systems administration. Technical support, computer equipment and network maintenance. Backup management. Software installation and configuration. User support.">
+                            Primera experiencia profesional en administración de sistemas. Soporte técnico, mantenimiento de equipos informáticos y redes. Gestión de copias de seguridad. Instalación y configuración de software. Atención a usuarios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-es="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="skill-title" data-es="Automatización" data-en="Automation">Automatización</h3>
+                    <ul class="skill-list">
+                        <li>Ansible</li>
+                        <li>Terraform</li>
+                        <li>Jenkins</li>
+                        <li>Puppet</li>
+                        <li data-es="Automatización de Despliegues" data-en="Deployment Automation">Automatización de Despliegues</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="skill-title" data-es="Sistemas & Bases de Datos" data-en="Systems & Databases">Sistemas & Bases de Datos</h3>
+                    <ul class="skill-list">
+                        <li>Linux / Windows</li>
+                        <li>LAMP Stack</li>
+                        <li>MySQL / NoSQL</li>
+                        <li>Elasticache (Redis)</li>
+                        <li data-es="Control de Versiones" data-en="Version Control">Control de Versiones (Git, SVN)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="skill-title" data-es="Cloud & Monitorización" data-en="Cloud & Monitoring">Cloud & Monitorización</h3>
+                    <ul class="skill-list">
+                        <li>AWS / Google Cloud / Azure</li>
+                        <li>Datadog</li>
+                        <li>Nagios / Centreon</li>
+                        <li data-es="Integración Continua" data-en="Continuous Integration">Integración Continua</li>
+                        <li>CI/CD Pipelines</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="skill-title" data-es="Gestión & Desarrollo" data-en="Management & Development">Gestión & Desarrollo</h3>
+                    <ul class="skill-list">
+                        <li>Scrum Master</li>
+                        <li data-es="Metodologías Ágiles" data-en="Agile Methodologies">Metodologías Ágiles</li>
+                        <li data-es="Gestión de Proyectos" data-en="Project Management">Gestión de Proyectos</li>
+                        <li>PHP / HTML / CSS</li>
+                        <li data-es="Formación y Educación" data-en="Training & Education">Formación y Educación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title" data-es="Formación Académica" data-en="Education">Formación Académica</h2>
+            <div class="education-grid">
+                <div class="education-item" data-aos="fade-up">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-title" data-es="Grado en Técnicas de Interacción Digital y Multimedia" data-en="Degree in Digital Interaction and Multimedia Techniques">Grado en Técnicas de Interacción Digital y Multimedia</h3>
+                        <h4 class="education-institution">UOC</h4>
+                        <p class="education-period" data-es="2021 - Presente" data-en="2021 - Present">2021 - Presente</p>
+                    </div>
+                </div>
+                
+                <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-title" data-es="Gestión de Proyectos" data-en="Project Management">Gestión de Proyectos</h3>
+                        <h4 class="education-institution">FHIOS Academy</h4>
+                        <p class="education-period">2019</p>
+                    </div>
+                </div>
+                
+                <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-title">Scrum Master</h3>
+                        <h4 class="education-institution">European Scrum</h4>
+                        <p class="education-period">2017</p>
+                    </div>
+                </div>
+
+                <div class="education-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-title">ITIL Foundations</h3>
+                        <h4 class="education-institution">PUE</h4>
+                        <p class="education-period">2017</p>
+                    </div>
+                </div>
+
+                <div class="education-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-title" data-es="Especialista en GNU (Postgrado)" data-en="GNU Specialist (Postgraduate)">Especialista en GNU (Postgrado)</h3>
+                        <h4 class="education-institution">UOC</h4>
+                        <p class="education-period">2014</p>
+                    </div>
+                </div>
+
+                <div class="education-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-title" data-es="Desarrollo de Aplicaciones Informáticas (Grado Superior)" data-en="Computer Applications Development (Higher Level)">Desarrollo de Aplicaciones Informáticas (Grado Superior)</h3>
+                        <h4 class="education-institution">IOC</h4>
+                        <p class="education-period">2010</p>
+                    </div>
+                </div>
+
+                <div class="education-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3 class="education-title">CCNA (Semestre 1-2)</h3>
+                        <h4 class="education-institution">Cisco</h4>
+                        <p class="education-period">2008</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-es="Hablemos" data-en="Let's Talk">Hablemos</h2>
+            <p class="contact-subtitle" data-es="¿Tienes un proyecto en mente? Me encantaría escuchar sobre él." data-en="Have a project in mind? I'd love to hear about it.">
+                ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él.
+            </p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item" data-aos="fade-right">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-es="Email" data-en="Email">Email</h3>
+                            <a href="mailto:marc@marcrafols.com">marc@marcrafols.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/marcrafols" target="_blank">linkedin.com/in/marcrafols</a>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-es="Ubicación" data-en="Location">Ubicación</h3>
+                            <span>Mahón, Menorca</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name" data-es="Nombre" data-en="Name">Nombre</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email" data-es="Email" data-en="Email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message" data-es="Mensaje" data-en="Message">Mensaje</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text" data-es="© 2025 Marc Ràfols Ibáñez. Todos los derechos reservados." data-en="© 2025 Marc Ràfols Ibáñez. All rights reserved.">
+                © 2025 Marc Ràfols Ibáñez. Todos los derechos reservados.
+            </p>
+            <div class="social-links">
+                <a href="mailto:marc@marcrafols.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/marcrafols" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/mrafols" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+
