@@ -112,27 +112,6 @@ function highlightActiveSection() {
 
 window.addEventListener('scroll', highlightActiveSection);
 
-// ==================== Contact Form ====================
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Here you would typically send the data to a server
-    // For now, we'll just show a success message
-    console.log('Form data:', data);
-    
-    const successMessage = currentLang === 'es' 
-        ? '¡Mensaje enviado con éxito! Te contactaré pronto.' 
-        : 'Message sent successfully! I\'ll contact you soon.';
-    
-    alert(successMessage);
-    contactForm.reset();
-});
-
 // ==================== Scroll Animations ====================
 function revealOnScroll() {
     const elements = document.querySelectorAll('[data-aos]');

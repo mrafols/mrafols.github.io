@@ -775,68 +775,51 @@ section {
     color: var(--accent-secondary);
 }
 
-.contact-form {
+.contact-cta {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-group {
-    position: relative;
+.cta-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.cta-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
     margin-bottom: var(--spacing-md);
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    background: var(--bg-secondary);
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    color: var(--text-primary);
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all var(--transition-base);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-primary);
-}
-
-.form-group input:focus + label,
-.form-group input:not(:placeholder-shown) + label,
-.form-group textarea:focus + label,
-.form-group textarea:not(:placeholder-shown) + label {
-    top: -10px;
-    left: 12px;
-    font-size: 0.85rem;
-    background: var(--card-bg);
-    padding: 0 0.5rem;
-    color: var(--accent-primary);
-}
-
-.form-group label {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    color: var(--text-muted);
-    pointer-events: none;
-    transition: all var(--transition-base);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form .btn {
-    width: 100%;
+.contact-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
     border: none;
     font-size: 1.1rem;
+    padding: 1.2rem 2.5rem;
+    transition: all var(--transition-base);
+}
+
+.contact-cta .btn i {
+    font-size: 1.3rem;
+}
+
+.contact-cta .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(var(--accent-primary-rgb), 0.3);
+}
+
+.btn-large {
+    font-size: 1.2rem;
+    padding: 1.2rem 2.5rem;
 }
 
 /* ==================== Footer ==================== */
@@ -1052,7 +1035,7 @@ section {
     .controls,
     .navbar,
     .scroll-indicator,
-    .contact-form {
+    .contact-cta {
         display: none;
     }
     
