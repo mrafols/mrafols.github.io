@@ -3,8 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marc Ràfols Ibáñez - Portfolio Profesional | Professional Portfolio">
+    <meta name="description" content="Marc Ràfols Ibáñez — SRE / DevOps con 19+ años en cloud, automatización y equipos ágiles. Mahón, Menorca.">
     <meta name="theme-color" content="#0a192f">
+    <link rel="canonical" href="https://marcrafols.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marcrafols.com/">
+    <meta property="og:title" content="Marc Ràfols Ibáñez | SRE / DevOps & Agile">
+    <meta property="og:description" content="Site Reliability Engineer y DevOps: AWS, automatización (Ansible, Terraform, Jenkins), monitorización y liderazgo técnico.">
+    <meta property="og:image" content="https://marcrafols.com/assets/img/profile-img.jpg">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marc Ràfols Ibáñez | SRE / DevOps & Agile">
+    <meta name="twitter:description" content="Site Reliability Engineer y DevOps: AWS, automatización, monitorización y liderazgo técnico.">
+    <meta name="twitter:image" content="https://marcrafols.com/assets/img/profile-img.jpg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marc Ràfols Ibáñez",
+        "url": "https://marcrafols.com/",
+        "image": "https://marcrafols.com/assets/img/profile-img.jpg",
+        "jobTitle": "Site Reliability Engineer / DevOps Engineer / Scrum Master",
+        "email": "marc@marcrafols.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mahón",
+            "addressRegion": "Illes Balears",
+            "addressCountry": "ES"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/marcrafols",
+            "https://github.com/mrafols"
+        ],
+        "knowsAbout": ["Site Reliability Engineering", "DevOps", "Amazon Web Services", "Terraform", "Ansible", "Jenkins", "Agile", "Scrum"]
+    }
+    </script>
     
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
@@ -15,7 +49,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
     
-    <title>Marc Ràfols Ibáñez | Portfolio</title>
+    <title>Marc Ràfols Ibáñez | SRE / DevOps & Agile</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,9 +63,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
     <!-- Language Toggle -->
     <div class="controls">
-        <button id="lang-toggle" class="control-btn" aria-label="Toggle language">
+        <button id="lang-toggle" class="control-btn" type="button" aria-label="Cambiar a inglés">
             <span class="lang-text">EN</span>
         </button>
     </div>
@@ -56,22 +91,29 @@
         </div>
     </nav>
 
+    <main id="main-content" tabindex="-1">
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" aria-labelledby="hero-heading">
         <div class="hero-bg"></div>
         <div class="hero-content">
             <div class="hero-text">
                 <p class="hero-greeting" data-es="Hola, soy" data-en="Hi, I'm">Hola, soy</p>
-                <h1 class="hero-name">Marc Ràfols Ibáñez</h1>
-                <h2 class="hero-title" data-es="DevOps Engineer & Scrum Master" data-en="DevOps Engineer & Scrum Master">
-                    DevOps Engineer & Scrum Master
+                <h1 class="hero-name" id="hero-heading">Marc Ràfols Ibáñez</h1>
+                <h2 class="hero-title" data-es="Site Reliability Engineer (SRE) / DevOps · Agile & formación" data-en="Site Reliability Engineer (SRE) / DevOps · Agile & training">
+                    Site Reliability Engineer (SRE) / DevOps · Agile & formación
                 </h2>
-                <p class="hero-description" data-es="Especialista en automatización, cloud computing y gestión ágil de proyectos. Combino experiencia técnica con habilidades de liderazgo y educación." data-en="Specialist in automation, cloud computing and agile project management. I combine technical expertise with leadership and education skills.">
-                    Especialista en automatización, cloud computing y gestión ágil de proyectos. Combino experiencia técnica con habilidades de liderazgo y educación.
+                <p class="hero-description" data-es="Diseño y opero plataformas fiables en AWS: automatización con Ansible y Terraform, CI/CD con Jenkins, observabilidad con Datadog y cultura ágil. Combino ingeniería de producción con liderazgo técnico y docencia en universidad y empresa." data-en="I design and run reliable AWS platforms: automation with Ansible and Terraform, CI/CD with Jenkins, observability with Datadog and an agile culture. I combine production engineering with technical leadership and teaching in academia and corporate settings.">
+                    Diseño y opero plataformas fiables en AWS: automatización con Ansible y Terraform, CI/CD con Jenkins, observabilidad con Datadog y cultura ágil. Combino ingeniería de producción con liderazgo técnico y docencia en universidad y empresa.
                 </p>
+                <ul class="hero-tags" aria-label="Especialidades principales">
+                    <li data-es="Alta carga &amp; producción" data-en="High traffic &amp; production">Alta carga &amp; producción</li>
+                    <li data-es="IaC &amp; automatización" data-en="IaC &amp; automation">IaC &amp; automatización</li>
+                    <li data-es="Equipos &amp; formación" data-en="Teams &amp; training">Equipos &amp; formación</li>
+                </ul>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary" data-es="Contáctame" data-en="Contact Me">Contáctame</a>
-                    <a href="#experience" class="btn btn-secondary" data-es="Ver Experiencia" data-en="View Experience">Ver Experiencia</a>
+                    <a href="#experience" class="btn btn-secondary" data-es="Ver experiencia" data-en="View experience">Ver experiencia</a>
+                    <a href="https://www.linkedin.com/in/marcrafols" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-es="LinkedIn" data-en="LinkedIn">LinkedIn</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -94,11 +136,11 @@
             <h2 class="section-title" data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-description" data-es="Soy Site Reliability Engineer con más de 19 años de experiencia en administración de sistemas, automatización y cloud computing. Mi trayectoria profesional abarca desde roles junior hasta posiciones de liderazgo técnico, trabajando con empresas de alto perfil en sectores como e-commerce, gaming, media y seguridad." data-en="I'm a Site Reliability Engineer with over 19 years of experience in systems administration, automation and cloud computing. My professional career spans from junior roles to technical leadership positions, working with high-profile companies in sectors such as e-commerce, gaming, media and security.">
-                        Soy Site Reliability Engineer con más de 19 años de experiencia en administración de sistemas, automatización y cloud computing. Mi trayectoria profesional abarca desde roles junior hasta posiciones de liderazgo técnico, trabajando con empresas de alto perfil en sectores como e-commerce, gaming, media y seguridad.
+                    <p class="about-description" data-es="Soy Site Reliability Engineer con más de 19 años en operación de sistemas, automatización y cloud. He pasado de roles junior a liderazgo técnico en entornos exigentes: e-commerce, gaming, medios audiovisuales y ciberseguridad." data-en="I'm a Site Reliability Engineer with 19+ years in systems operations, automation and cloud. I've grown from junior roles to technical leadership in demanding environments: e-commerce, gaming, media and cybersecurity.">
+                        Soy Site Reliability Engineer con más de 19 años en operación de sistemas, automatización y cloud. He pasado de roles junior a liderazgo técnico en entornos exigentes: e-commerce, gaming, medios audiovisuales y ciberseguridad.
                     </p>
-                    <p class="about-description" data-es="Especializado en automatización (Ansible, Terraform, Puppet, Jenkins), multi-cloud (AWS, Google Cloud, Azure) y metodologías ágiles. He gestionado infraestructuras de alto tráfico, liderado equipos DevOps y formado a profesionales en la UPC y Monlau. Mi pasión por la enseñanza complementa mi experiencia técnica, permitiéndome compartir conocimientos y mentorar a nuevas generaciones de profesionales IT." data-en="Specialized in automation (Ansible, Terraform, Puppet, Jenkins), multi-cloud (AWS, Google Cloud, Azure) and agile methodologies. I've managed high-traffic infrastructures, led DevOps teams and trained professionals at UPC and Monlau. My passion for teaching complements my technical expertise, allowing me to share knowledge and mentor new generations of IT professionals.">
-                        Especializado en automatización (Ansible, Terraform, Puppet, Jenkins), multi-cloud (AWS, Google Cloud, Azure) y metodologías ágiles. He gestionado infraestructuras de alto tráfico, liderado equipos DevOps y formado a profesionales en la UPC y Monlau. Mi pasión por la enseñanza complementa mi experiencia técnica, permitiéndome compartir conocimientos y mentorar a nuevas generaciones de profesionales IT.
+                    <p class="about-description" data-es="Me centro en reducir fricción operativa: Ansible, Terraform, Puppet y Jenkins; entornos multi-cloud (AWS, Google Cloud, Azure) y prácticas ágiles. He operado infraestructuras de alto tráfico, liderado equipos DevOps y formado talento en la UPC y Monlau. La docencia me obliga a clarificar lo complejo: útil también en incidentes y revisiones de arquitectura." data-en="I focus on reducing operational friction: Ansible, Terraform, Puppet and Jenkins; multi-cloud environments (AWS, Google Cloud, Azure) and agile practices. I've operated high-traffic infrastructures, led DevOps teams and developed talent at UPC and Monlau. Teaching forces me to clarify complexity—which also helps during incidents and architecture reviews.">
+                        Me centro en reducir fricción operativa: Ansible, Terraform, Puppet y Jenkins; entornos multi-cloud (AWS, Google Cloud, Azure) y prácticas ágiles. He operado infraestructuras de alto tráfico, liderado equipos DevOps y formado talento en la UPC y Monlau. La docencia me obliga a clarificar lo complejo: útil también en incidentes y revisiones de arquitectura.
                     </p>
                     <div class="about-stats">
                         <div class="stat">
@@ -132,10 +174,16 @@
                         </div>
                         <h3 class="timeline-title">Site Reliability Engineer | DevOps</h3>
                         <h4 class="timeline-company">Leadtech Group</h4>
-                        <p class="timeline-period" data-es="Sep 2021 - Presente · 4 años 2 meses" data-en="Sep 2021 - Present · 4 years 2 months">Sep 2021 - Presente · 4 años 2 meses</p>
-                        <p class="timeline-description" data-es="Automatización de sistemas operativos con Ansible, Terraform y Jenkins. Administración de entornos AWS en producción y desarrollo. Gestión de entornos LAMP, bases de datos MySQL/NoSQL, sistemas de colas (Elasticache) y monitorización con Datadog. Trabajo remoto desde Mahón, Islas Baleares." data-en="Operating system automation with Ansible, Terraform and Jenkins. Management of AWS environments in production and development. Management of LAMP environments, MySQL/NoSQL databases, queue systems (Elasticache) and monitoring with Datadog. Remote work from Mahón, Balearic Islands.">
-                            Automatización de sistemas operativos con Ansible, Terraform y Jenkins. Administración de entornos AWS en producción y desarrollo. Gestión de entornos LAMP, bases de datos MySQL/NoSQL, sistemas de colas (Elasticache) y monitorización con Datadog. Trabajo remoto desde Mahón, Islas Baleares.
+                        <p class="timeline-period" data-es="Sep 2021 - Presente · 4 años 7 meses" data-en="Sep 2021 - Present · 4 years 7 months">Sep 2021 - Presente · 4 años 7 meses</p>
+                        <p class="timeline-lead" data-es="SRE/DevOps en producción AWS (Mahón, remoto): fiabilidad, automatización y observabilidad." data-en="SRE/DevOps on AWS production (Mahón, remote): reliability, automation and observability.">
+                            SRE/DevOps en producción AWS (Mahón, remoto): fiabilidad, automatización y observabilidad.
                         </p>
+                        <ul class="timeline-bullets" aria-label="Responsabilidades principales">
+                            <li data-es="Infraestructura como código y automatización de SO con Ansible, Terraform y pipelines en Jenkins." data-en="Infrastructure as code and OS automation with Ansible, Terraform and Jenkins pipelines.">Infraestructura como código y automatización de SO con Ansible, Terraform y pipelines en Jenkins.</li>
+                            <li data-es="Operación de entornos LAMP, bases de datos MySQL/NoSQL y colas con Amazon ElastiCache (Redis)." data-en="Operation of LAMP stacks, MySQL/NoSQL databases and queues with Amazon ElastiCache (Redis).">Operación de entornos LAMP, bases de datos MySQL/NoSQL y colas con Amazon ElastiCache (Redis).</li>
+                            <li data-es="Monitorización, alertas y mejora continua con Datadog." data-en="Monitoring, alerting and continuous improvement with Datadog.">Monitorización, alertas y mejora continua con Datadog.</li>
+                            <li data-es="Colaboración con equipos de producto para despliegues seguros y resolución de incidencias." data-en="Collaboration with product teams for safe deployments and incident response.">Colaboración con equipos de producto para despliegues seguros y resolución de incidencias.</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -178,8 +226,8 @@
                         <h3 class="timeline-title">Project Manager</h3>
                         <h4 class="timeline-company">FHIOS Smart Knowledge</h4>
                         <p class="timeline-period" data-es="Mar 2018 - Abr 2019 · 1 año 2 meses" data-en="Mar 2018 - Apr 2019 · 1 year 2 months">Mar 2018 - Abr 2019 · 1 año 2 meses</p>
-                        <p class="timeline-description" data-es="Gestión y promoción de proyectos IT basados en Agile. Gestión de equipos con Scrum. Coordinación de equipos de desarrollo. Administración de bases de datos MySQL/NoSQL, sistemas de colas (Elasticache) y monitorización con Nagios. Barcelona." data-en="Management and promotion of Agile-based IT projects. Team management with Scrum. Coordination of development teams. Management of MySQL/NoSQL databases, queue systems (Elasticache) and monitoring with Nagios. Barcelona.">
-                            Gestión y promoción de proyectos IT basados en Agile. Gestión de equipos con Scrum. Coordinación de equipos de desarrollo. Administración de bases de datos MySQL/NoSQL, sistemas de colas (Elasticache) y monitorización con Nagios. Barcelona.
+                        <p class="timeline-description" data-es="Gestión y promoción de proyectos IT basados en Agile. Gestión de equipos con Scrum. Coordinación de equipos de desarrollo. Administración de bases de datos MySQL/NoSQL, sistemas de colas (Amazon ElastiCache) y monitorización con Nagios. Barcelona." data-en="Management and promotion of Agile-based IT projects. Team management with Scrum. Coordination of development teams. Management of MySQL/NoSQL databases, queue systems (Amazon ElastiCache) and monitoring with Nagios. Barcelona.">
+                            Gestión y promoción de proyectos IT basados en Agile. Gestión de equipos con Scrum. Coordinación de equipos de desarrollo. Administración de bases de datos MySQL/NoSQL, sistemas de colas (Amazon ElastiCache) y monitorización con Nagios. Barcelona.
                         </p>
                     </div>
                 </div>
@@ -365,7 +413,7 @@
                         <li>Linux / Windows</li>
                         <li>LAMP Stack</li>
                         <li>MySQL / NoSQL</li>
-                        <li>Elasticache (Redis)</li>
+                        <li>Amazon ElastiCache (Redis)</li>
                         <li data-es="Control de Versiones" data-en="Version Control">Control de Versiones (Git, SVN)</li>
                     </ul>
                 </div>
@@ -413,7 +461,7 @@
                     <div class="education-content">
                         <h3 class="education-title" data-es="Grado en Técnicas de Interacción Digital y Multimedia" data-en="Degree in Digital Interaction and Multimedia Techniques">Grado en Técnicas de Interacción Digital y Multimedia</h3>
                         <h4 class="education-institution">UOC</h4>
-                        <p class="education-period" data-es="2021 - 2025" data-en="2021 - 2025">2021 - 2025</p>
+                        <p class="education-period" data-es="2021 - 2025 · UOC (online)" data-en="2021 - 2025 · UOC (online)">2021 - 2025 · UOC (online)</p>
                     </div>
                 </div>
                 
@@ -480,8 +528,8 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title" data-es="Hablemos" data-en="Let's Talk">Hablemos</h2>
-            <p class="contact-subtitle" data-es="¿Tienes un proyecto en mente? Me encantaría escuchar sobre él." data-en="Have a project in mind? I'd love to hear about it.">
-                ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él.
+            <p class="contact-subtitle" data-es="¿Colaboración técnica, mentoría o una posición SRE/DevOps? Escríbeme con contexto y objetivos." data-en="Technical collaboration, mentoring or an SRE/DevOps role? Write me with context and goals.">
+                ¿Colaboración técnica, mentoría o una posición SRE/DevOps? Escríbeme con contexto y objetivos.
             </p>
             <div class="contact-content">
                 <div class="contact-info">
@@ -500,23 +548,32 @@
                         </div>
                         <div class="contact-details">
                             <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/marcrafols" target="_blank">linkedin.com/in/marcrafols</a>
+                            <a href="https://www.linkedin.com/in/marcrafols" target="_blank" rel="noopener noreferrer">linkedin.com/in/marcrafols</a>
                         </div>
                     </div>
                     <div class="contact-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/mrafols" target="_blank" rel="noopener noreferrer">github.com/mrafols</a>
+                        </div>
+                    </div>
+                    <div class="contact-item" data-aos="fade-right" data-aos-delay="250">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h3 data-es="Ubicación" data-en="Location">Ubicación</h3>
-                            <span>Mahón, Menorca</span>
+                            <span data-es="Mahón, Menorca (remoto / híbrido)" data-en="Mahón, Menorca (remote / hybrid)">Mahón, Menorca (remoto / híbrido)</span>
                         </div>
                     </div>
                 </div>
                 <div class="contact-cta" data-aos="fade-left">
                     <div class="cta-content">
-                        <p class="cta-description" data-es="¿Listo para empezar tu proyecto? Envíame un correo y hablemos sobre cómo puedo ayudarte." data-en="Ready to start your project? Send me an email and let's talk about how I can help you.">
-                            ¿Listo para empezar tu proyecto? Envíame un correo y hablemos sobre cómo puedo ayudarte.
+                        <p class="cta-description" data-es="Cuéntame stack, restricciones y qué significa éxito para tu equipo; respondo con propuesta clara." data-en="Tell me about your stack, constraints and what success looks like for your team—I will reply with a clear proposal.">
+                            Cuéntame stack, restricciones y qué significa éxito para tu equipo; respondo con propuesta clara.
                         </p>
                         <a href="mailto:marc@marcrafols.com" class="btn btn-primary btn-large">
                             <i class="fas fa-envelope"></i>
@@ -528,20 +585,22 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text" data-es="© 2025 Marc Ràfols Ibáñez. Todos los derechos reservados." data-en="© 2025 Marc Ràfols Ibáñez. All rights reserved.">
-                © 2025 Marc Ràfols Ibáñez. Todos los derechos reservados.
+            <p class="footer-text" data-es="© 2026 Marc Ràfols Ibáñez. Todos los derechos reservados." data-en="© 2026 Marc Ràfols Ibáñez. All rights reserved.">
+                © 2026 Marc Ràfols Ibáñez. Todos los derechos reservados.
             </p>
             <div class="social-links">
                 <a href="mailto:marc@marcrafols.com" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/marcrafols" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/marcrafols" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/mrafols" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/mrafols" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
             </div>

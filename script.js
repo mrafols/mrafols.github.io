@@ -33,6 +33,10 @@ function setLanguage(lang) {
     const langToggle = document.getElementById('lang-toggle');
     const langText = langToggle.querySelector('.lang-text');
     langText.textContent = lang === 'es' ? 'EN' : 'ES';
+    langToggle.setAttribute(
+        'aria-label',
+        lang === 'es' ? 'Cambiar el idioma del sitio a inglés' : 'Cambiar el idioma del sitio a español'
+    );
 }
 
 // ==================== Theme Management ====================
@@ -162,13 +166,20 @@ window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
 // ==================== Parallax Effect ====================
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 window.addEventListener('scroll', () => {
+    if (prefersReducedMotion()) return;
+
     const scrolled = window.pageYOffset;
     const heroContent = document.querySelector('.hero-content');
-    
+
     if (heroContent) {
-        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroContent.style.opacity = 1 - (scrolled * 0.002);
+        const capped = Math.min(scrolled, 420);
+        heroContent.style.transform = `translateY(${capped * 0.12}px)`;
+        heroContent.style.opacity = String(Math.max(0.4, 1 - scrolled * 0.002));
     }
 });
 
@@ -191,20 +202,25 @@ function typeWriter(element, text, speed = 100) {
 // ==================== Stats Counter Animation ====================
 function animateStats() {
     const stats = document.querySelectorAll('.stat-number');
-    
+
     stats.forEach(stat => {
-        const target = parseInt(stat.textContent);
+        const raw = stat.textContent.trim();
+        const match = raw.match(/^(\d+)/);
+        if (!match) return;
+
+        const target = parseInt(match[1], 10);
+        const suffix = raw.includes('+') ? '+' : '';
         const duration = 2000;
         const increment = target / (duration / 16);
         let current = 0;
-        
+
         const updateCounter = () => {
             current += increment;
             if (current < target) {
-                stat.textContent = Math.floor(current) + '+';
+                stat.textContent = Math.floor(current) + suffix;
                 requestAnimationFrame(updateCounter);
             } else {
-                stat.textContent = target + '+';
+                stat.textContent = target + suffix;
             }
         };
         
@@ -457,9 +473,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize animations and effects
     animateStats();
-    createCursorEffect();
-    createParticles();
-    addTiltEffect();
+    if (!prefersReducedMotion()) {
+        createCursorEffect();
+        createParticles();
+        addTiltEffect();
+    }
     setupEmailCopy();
     
     // Reveal elements on scroll

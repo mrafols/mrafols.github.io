@@ -48,6 +48,12 @@ html {
     font-size: 16px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--bg-primary);
@@ -60,6 +66,26 @@ body {
 ::selection {
     background-color: var(--accent-primary);
     color: var(--bg-primary);
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: var(--spacing-sm);
+    z-index: 10000;
+    padding: 0.75rem 1.25rem;
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: var(--spacing-sm);
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
 }
 
 /* ==================== Controls ==================== */
@@ -95,6 +121,11 @@ body {
     box-shadow: var(--shadow-lg);
     background: var(--card-bg);
     border-color: var(--accent-primary);
+}
+
+.control-btn:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
 }
 
 .lang-text {
@@ -177,6 +208,21 @@ body {
     width: 100%;
 }
 
+.nav-link:focus-visible {
+    color: var(--accent-primary);
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.nav-link.active {
+    color: var(--accent-primary);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -194,6 +240,12 @@ body {
     background: var(--text-primary);
     transition: all var(--transition-base);
     border-radius: 3px;
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 /* ==================== Hero Section ==================== */
@@ -271,6 +323,31 @@ body {
     margin-bottom: var(--spacing-md);
     line-height: 1.8;
     animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    list-style: none;
+    margin: 0 0 var(--spacing-md);
+    padding: 0;
+    animation: fadeInUp 0.8s ease 0.65s both;
+}
+
+.hero-tags li {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(100, 255, 218, 0.35);
+    background: rgba(100, 255, 218, 0.06);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
 }
 
 .hero-cta {
@@ -574,6 +651,28 @@ section {
 .timeline-description {
     color: var(--text-secondary);
     line-height: 1.7;
+}
+
+.timeline-lead {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.timeline-bullets {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+.timeline-bullets li {
+    margin-bottom: 0.45rem;
+}
+
+.timeline-bullets li::marker {
+    color: var(--accent-primary);
 }
 
 /* ==================== Skills Section ==================== */
@@ -914,6 +1013,17 @@ section {
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .scroll-indicator,
+    .profile-ring {
+        animation: none !important;
+    }
+
+    .profile-wrapper:hover .profile-img {
+        transform: none;
+    }
+}
+
 /* ==================== Responsive Design ==================== */
 @media (max-width: 968px) {
     .hero-content {
@@ -930,6 +1040,10 @@ section {
     }
     
     .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-tags {
         justify-content: center;
     }
     
