@@ -135,7 +135,11 @@
 }
 
 @media (max-width: 768px) {
-    .aurora-blob { filter: blur(50px); opacity: 0.35; }
+    .aurora-blob {
+        filter: blur(50px);
+        opacity: 0.35;
+        animation: none;
+    }
 }
 
 /* ==================== Decorative Doodles ==================== */

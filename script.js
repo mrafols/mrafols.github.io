@@ -210,17 +210,46 @@ function initHeroSpotlight() {
     });
 }
 
-window.addEventListener('scroll', () => {
-    if (prefersReducedMotion()) return;
+// Disabled on mobile/touch devices: JS-driven opacity/transform on scroll
+// can't keep up with momentum scrolling on iOS/Android and causes a
+// "stuck" semi-transparent frame (ghosting) to appear over the next section.
+function isMobileViewport() {
+    return window.matchMedia('(max-width: 968px)').matches || window.matchMedia('(hover: none)').matches;
+}
+
+let parallaxTicking = false;
+
+function updateHeroParallax() {
+    parallaxTicking = false;
+    if (prefersReducedMotion() || isMobileViewport()) return;
+
+    const heroContent = document.querySelector('.hero-content');
+    if (!heroContent) return;
 
     const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector('.hero-content');
+    const capped = Math.min(scrolled, 420);
+    heroContent.style.transform = `translateY(${capped * 0.12}px)`;
+    heroContent.style.opacity = String(Math.max(0.4, 1 - scrolled * 0.002));
+}
 
+function resetHeroParallax() {
+    const heroContent = document.querySelector('.hero-content');
     if (heroContent) {
-        const capped = Math.min(scrolled, 420);
-        heroContent.style.transform = `translateY(${capped * 0.12}px)`;
-        heroContent.style.opacity = String(Math.max(0.4, 1 - scrolled * 0.002));
+        heroContent.style.transform = '';
+        heroContent.style.opacity = '';
     }
+}
+
+window.addEventListener('scroll', () => {
+    if (isMobileViewport() || prefersReducedMotion()) return;
+    if (!parallaxTicking) {
+        parallaxTicking = true;
+        requestAnimationFrame(updateHeroParallax);
+    }
+}, { passive: true });
+
+window.addEventListener('resize', () => {
+    if (isMobileViewport()) resetHeroParallax();
 });
 
 // ==================== Typing Effect for Hero Title ====================
