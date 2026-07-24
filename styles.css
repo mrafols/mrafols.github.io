@@ -466,8 +466,7 @@ body {
 .nav-link.active::after { width: 100%; }
 
 @media (min-width: 993px) {
-    .navbar .nav-menu { display: none; }
-    .navbar .hamburger { display: none; }
+    .navbar { display: none; }
 }
 
 .hamburger {

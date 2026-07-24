@@ -29,6 +29,14 @@ function setLanguage(lang) {
         }
     });
     
+    // Update aria-label-only elements (e.g. icon-only sidebar links) without touching their content
+    document.querySelectorAll('[data-aria-es][data-aria-en]').forEach(element => {
+        const label = element.getAttribute(`data-aria-${lang}`);
+        if (label) {
+            element.setAttribute('aria-label', label);
+        }
+    });
+
     // Update language toggle buttons (mobile control + desktop side dock)
     document.querySelectorAll('.lang-toggle-btn').forEach(langToggle => {
         const langText = langToggle.querySelector('.lang-text');
