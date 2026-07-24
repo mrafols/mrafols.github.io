@@ -543,36 +543,6 @@ body {
     z-index: 1;
 }
 
-.status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.9rem 0.4rem 0.7rem;
-    border-radius: 999px;
-    border: 1px solid rgba(33, 201, 168, 0.3);
-    background: rgba(33, 201, 168, 0.08);
-    font-family: 'Fira Code', monospace;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #189b81;
-    margin-bottom: var(--spacing-sm);
-    animation: fadeInUp 0.8s ease both;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent-teal);
-    animation: statusPulse 2s infinite;
-}
-
-@keyframes statusPulse {
-    0% { box-shadow: 0 0 0 0 rgba(33, 201, 168, 0.55); }
-    70% { box-shadow: 0 0 0 7px rgba(33, 201, 168, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(33, 201, 168, 0); }
-}
-
 .hero-greeting {
     font-size: 1.2rem;
     color: var(--accent-red);
@@ -607,7 +577,6 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
     .hero-name .highlight { animation: none; }
-    .status-dot { animation: none; }
 }
 
 .hero-title {
@@ -828,20 +797,21 @@ body {
 /* ==================== Terminal Card ==================== */
 .terminal-card {
     position: absolute;
-    bottom: -10px;
-    right: -55px;
-    width: 270px;
+    bottom: -30px;
+    right: -60px;
+    width: 235px;
     background: var(--bg-card);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
     overflow: hidden;
     z-index: 3;
+    transform: rotate(-2deg);
     animation: fadeIn 1s ease 1.2s both, floatCard 6s ease-in-out infinite;
 }
 
 @keyframes floatCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    0%, 100% { transform: rotate(-2deg) translateY(0); }
+    50% { transform: rotate(-2deg) translateY(-8px); }
 }
 
 .terminal-bar {
@@ -867,10 +837,10 @@ body {
 
 .terminal-body {
     margin: 0;
-    padding: 0.9rem 1rem 1.05rem;
+    padding: 0.75rem 0.9rem 0.9rem;
     font-family: 'Fira Code', monospace;
-    font-size: 0.72rem;
-    line-height: 1.65;
+    font-size: 0.66rem;
+    line-height: 1.55;
     color: var(--text-secondary);
     white-space: pre-wrap;
     text-align: left;
@@ -894,6 +864,7 @@ body {
         margin: var(--spacing-md) auto 0;
         right: auto;
         bottom: auto;
+        transform: none;
         animation: fadeIn 1s ease 1.2s both;
     }
 }
