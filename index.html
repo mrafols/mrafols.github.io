@@ -64,6 +64,17 @@
 </head>
 <body>
     <a class="skip-link" href="#main-content" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
+
+    <!-- Ambient background -->
+    <div class="aurora-backdrop" aria-hidden="true">
+        <span class="aurora-blob one"></span>
+        <span class="aurora-blob two"></span>
+        <span class="aurora-blob three"></span>
+    </div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Language Toggle -->
     <div class="controls">
         <button id="lang-toggle" class="control-btn" type="button" aria-label="Cambiar a inglés">
@@ -95,8 +106,13 @@
     <!-- Hero Section -->
     <section id="home" class="hero" aria-labelledby="hero-heading">
         <div class="hero-bg"></div>
+        <div class="hero-spotlight" id="hero-spotlight" aria-hidden="true"></div>
         <div class="hero-content">
             <div class="hero-text">
+                <span class="status-badge">
+                    <span class="status-dot"></span>
+                    <span data-es="Disponible para nuevos retos" data-en="Available for new challenges">Disponible para nuevos retos</span>
+                </span>
                 <p class="hero-greeting" data-es="Hola, soy" data-en="Hi, I'm">Hola, soy</p>
                 <h1 class="hero-name" id="hero-heading">Marc Ràfols Ibáñez</h1>
                 <h2 class="hero-title" data-es="Site Reliability Engineer · IA & Automatización Inteligente" data-en="Site Reliability Engineer · AI & Intelligent Automation">
@@ -121,6 +137,20 @@
                 <div class="profile-wrapper">
                     <img src="assets/img/profile-img.jpg" alt="Marc Ràfols Ibáñez" class="profile-img">
                     <div class="profile-ring"></div>
+                    <div class="terminal-card" aria-hidden="true">
+                        <div class="terminal-bar">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal-title">sre-agent.sh</span>
+                        </div>
+                        <pre class="terminal-body"><code><span class="t-prompt">$</span> whoami
+<span class="t-out">marc · sre / ai & automation</span>
+<span class="t-prompt">$</span> terraform plan
+<span class="t-out">+ 0 to apply<span class="t-blink">▍</span></span>
+<span class="t-prompt">$</span> ai-agent --review incident.md
+<span class="t-ok">✔ guardrails ok · human approval required</span></code></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,6 +164,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
+            <span class="section-eyebrow" data-es="01 // Sobre mí" data-en="01 // About">01 // Sobre mí</span>
             <h2 class="section-title" data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
             <div class="about-content">
                 <div class="about-text">
@@ -172,6 +203,7 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
+            <span class="section-eyebrow" data-es="02 // Experiencia" data-en="02 // Experience">02 // Experiencia</span>
             <h2 class="section-title" data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</h2>
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-up">
@@ -397,6 +429,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
+            <span class="section-eyebrow" data-es="03 // Habilidades" data-en="03 // Skills">03 // Habilidades</span>
             <h2 class="section-title" data-es="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</h2>
             <div class="skills-grid">
                 <div class="skill-category" data-aos="fade-up">
@@ -475,6 +508,7 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
+            <span class="section-eyebrow" data-es="04 // Formación" data-en="04 // Education">04 // Formación</span>
             <h2 class="section-title" data-es="Formación Académica" data-en="Education">Formación Académica</h2>
             <div class="education-grid">
                 <div class="education-item" data-aos="fade-up">
@@ -550,6 +584,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
+            <span class="section-eyebrow" data-es="05 // Contacto" data-en="05 // Contact">05 // Contacto</span>
             <h2 class="section-title" data-es="Hablemos" data-en="Let's Talk">Hablemos</h2>
             <p class="contact-subtitle" data-es="¿Colaboración técnica, mentoría o una posición SRE/DevOps con foco en IA y automatización? Escríbeme con contexto y objetivos." data-en="Technical collaboration, mentoring or an SRE/DevOps role focused on AI and automation? Write me with context and goals.">
                 ¿Colaboración técnica, mentoría o una posición SRE/DevOps con foco en IA y automatización? Escríbeme con contexto y objetivos.

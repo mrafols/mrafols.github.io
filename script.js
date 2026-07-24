@@ -170,6 +170,35 @@ function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+// ==================== Scroll Progress Bar ====================
+function updateScrollProgress() {
+    const progressBar = document.getElementById('scroll-progress');
+    if (!progressBar) return;
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = percent + '%';
+}
+
+window.addEventListener('scroll', updateScrollProgress);
+window.addEventListener('load', updateScrollProgress);
+window.addEventListener('resize', updateScrollProgress);
+
+// ==================== Hero Cursor Spotlight ====================
+function initHeroSpotlight() {
+    const hero = document.querySelector('.hero');
+    const spotlight = document.getElementById('hero-spotlight');
+    if (!hero || !spotlight) return;
+
+    hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        spotlight.style.setProperty('--spot-x', x + '%');
+        spotlight.style.setProperty('--spot-y', y + '%');
+    });
+}
+
 window.addEventListener('scroll', () => {
     if (prefersReducedMotion()) return;
 
@@ -477,11 +506,13 @@ document.addEventListener('DOMContentLoaded', () => {
         createCursorEffect();
         createParticles();
         addTiltEffect();
+        initHeroSpotlight();
     }
     setupEmailCopy();
     
     // Reveal elements on scroll
     revealOnScroll();
+    updateScrollProgress();
 });
 
 // ==================== PWA Install Prompt ====================
