@@ -29,14 +29,17 @@ function setLanguage(lang) {
         }
     });
     
-    // Update language toggle button
-    const langToggle = document.getElementById('lang-toggle');
-    const langText = langToggle.querySelector('.lang-text');
-    langText.textContent = lang === 'es' ? 'EN' : 'ES';
-    langToggle.setAttribute(
-        'aria-label',
-        lang === 'es' ? 'Cambiar el idioma del sitio a inglés' : 'Cambiar el idioma del sitio a español'
-    );
+    // Update language toggle buttons (mobile control + desktop side dock)
+    document.querySelectorAll('.lang-toggle-btn').forEach(langToggle => {
+        const langText = langToggle.querySelector('.lang-text');
+        if (langText) {
+            langText.textContent = lang === 'es' ? 'EN' : 'ES';
+        }
+        langToggle.setAttribute(
+            'aria-label',
+            lang === 'es' ? 'Cambiar el idioma del sitio a inglés' : 'Cambiar el idioma del sitio a español'
+        );
+    });
 }
 
 // ==================== Theme Management ====================
@@ -267,6 +270,27 @@ function animateStats() {
     });
 }
 
+// ==================== Skill Bars Animation ====================
+function animateSkillBars() {
+    const fills = document.querySelectorAll('.skill-bar-fill');
+    if (!fills.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const fill = entry.target;
+                const percent = fill.dataset.percent || 0;
+                requestAnimationFrame(() => {
+                    fill.style.width = percent + '%';
+                });
+                observer.unobserve(fill);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    fills.forEach(fill => observer.observe(fill));
+}
+
 // ==================== Cursor Effect ====================
 function createCursorEffect() {
     const cursor = document.createElement('div');
@@ -346,11 +370,11 @@ function createParticles() {
         
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 5px;
+            height: 5px;
             background: var(--accent-primary);
             border-radius: 50%;
-            opacity: 0.3;
+            opacity: 0.45;
             animation: float linear infinite;
         }
         
@@ -360,10 +384,10 @@ function createParticles() {
                 opacity: 0;
             }
             10% {
-                opacity: 0.3;
+                opacity: 0.45;
             }
             90% {
-                opacity: 0.3;
+                opacity: 0.45;
             }
             100% {
                 transform: translateY(-100vh) translateX(50px);
@@ -495,13 +519,16 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(currentLang);
     
     // Setup event listeners
-    document.getElementById('lang-toggle').addEventListener('click', () => {
-        const newLang = currentLang === 'es' ? 'en' : 'es';
-        setLanguage(newLang);
+    document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            setLanguage(newLang);
+        });
     });
     
     // Initialize animations and effects
     animateStats();
+    animateSkillBars();
     if (!prefersReducedMotion()) {
         createCursorEffect();
         createParticles();

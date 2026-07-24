@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Marc Ràfols Ibáñez — SRE experto en automatización e IA con 19+ años en cloud, Terraform e infraestructura como código. Mahón, Menorca.">
-    <meta name="theme-color" content="#0a192f">
+    <meta name="theme-color" content="#f6f5fb">
     <link rel="canonical" href="https://marcrafols.com/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://marcrafols.com/">
@@ -75,14 +75,29 @@
     <!-- Scroll progress -->
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-    <!-- Language Toggle -->
+    <!-- Language Toggle (mobile) -->
     <div class="controls">
-        <button id="lang-toggle" class="control-btn" type="button" aria-label="Cambiar a inglés">
+        <button id="lang-toggle" class="control-btn lang-toggle-btn" type="button" aria-label="Cambiar a inglés">
             <span class="lang-text">EN</span>
         </button>
     </div>
 
-    <!-- Navigation -->
+    <!-- Side Dock (desktop icon navigation) -->
+    <aside class="side-dock" aria-label="Navegación principal">
+        <a href="#home" class="dock-logo" aria-label="Inicio">MR</a>
+        <a href="#home" class="nav-link" data-es="Inicio" data-en="Home" aria-label="Inicio"><i class="fas fa-house" aria-hidden="true"></i></a>
+        <a href="#about" class="nav-link" data-es="Sobre mí" data-en="About" aria-label="Sobre mí"><i class="fas fa-user" aria-hidden="true"></i></a>
+        <a href="#experience" class="nav-link" data-es="Experiencia" data-en="Experience" aria-label="Experiencia"><i class="fas fa-briefcase" aria-hidden="true"></i></a>
+        <a href="#skills" class="nav-link" data-es="Habilidades" data-en="Skills" aria-label="Habilidades"><i class="fas fa-code" aria-hidden="true"></i></a>
+        <a href="#education" class="nav-link" data-es="Formación" data-en="Education" aria-label="Formación"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+        <a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact" aria-label="Contacto"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <span class="dock-sep" aria-hidden="true"></span>
+        <button id="lang-toggle-desktop" class="control-btn lang-toggle-btn" type="button" aria-label="Cambiar a inglés">
+            <span class="lang-text">EN</span>
+        </button>
+    </aside>
+
+    <!-- Navigation (mobile) -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">M<span class="logo-accent">R</span></a>
@@ -107,6 +122,10 @@
     <section id="home" class="hero" aria-labelledby="hero-heading">
         <div class="hero-bg"></div>
         <div class="hero-spotlight" id="hero-spotlight" aria-hidden="true"></div>
+        <span class="doodle doodle-circle" style="width:90px;height:90px;top:12%;left:6%;" aria-hidden="true"></span>
+        <span class="doodle doodle-triangle" style="top:20%;right:10%;" aria-hidden="true"></span>
+        <span class="doodle doodle-dot" style="bottom:18%;left:12%;" aria-hidden="true"></span>
+        <span class="doodle doodle-plus" style="bottom:25%;right:6%;" aria-hidden="true">+</span>
         <div class="hero-content">
             <div class="hero-text">
                 <span class="status-badge">
@@ -114,7 +133,7 @@
                     <span data-es="Disponible para nuevos retos" data-en="Available for new challenges">Disponible para nuevos retos</span>
                 </span>
                 <p class="hero-greeting" data-es="Hola, soy" data-en="Hi, I'm">Hola, soy</p>
-                <h1 class="hero-name" id="hero-heading">Marc Ràfols Ibáñez</h1>
+                <h1 class="hero-name" id="hero-heading">Marc <span class="highlight">Ràfols Ibáñez</span></h1>
                 <h2 class="hero-title" data-es="Site Reliability Engineer · IA & Automatización Inteligente" data-en="Site Reliability Engineer · AI & Intelligent Automation">
                     Site Reliability Engineer · IA & Automatización Inteligente
                 </h2>
@@ -132,10 +151,15 @@
                     <a href="#experience" class="btn btn-secondary" data-es="Ver experiencia" data-en="View experience">Ver experiencia</a>
                     <a href="https://www.linkedin.com/in/marcrafols" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-es="LinkedIn" data-en="LinkedIn">LinkedIn</a>
                 </div>
+                <p class="hero-scroll-hint">
+                    <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                    <span data-es="Desliza para ver más" data-en="Scroll down for more">Desliza para ver más</span>
+                </p>
             </div>
             <div class="hero-image">
                 <div class="profile-wrapper">
-                    <img src="assets/img/profile-img.jpg" alt="Marc Ràfols Ibáñez" class="profile-img">
+                    <div class="hero-blob" aria-hidden="true"></div>
+                    <img src="assets/img/illustrated-avatar.png" alt="Marc Ràfols Ibáñez" class="profile-img">
                     <div class="profile-ring"></div>
                     <div class="terminal-card" aria-hidden="true">
                         <div class="terminal-bar">
@@ -167,34 +191,100 @@
             <span class="section-eyebrow" data-es="01 // Sobre mí" data-en="01 // About">01 // Sobre mí</span>
             <h2 class="section-title" data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
             <div class="about-content">
+                <div class="about-avatar-wrap">
+                    <span class="doodle doodle-circle" style="width:70px;height:70px;top:-10%;right:5%;" aria-hidden="true"></span>
+                    <span class="doodle doodle-dot" style="bottom:0;left:0;" aria-hidden="true"></span>
+                    <img src="assets/img/illustrated-avatar.png" alt="Marc Ràfols Ibáñez" class="about-avatar">
+                </div>
                 <div class="about-text">
                     <p class="about-description" data-es="Soy Site Reliability Engineer con más de 19 años en operación de sistemas, automatización y cloud. He pasado de roles junior a liderazgo técnico en entornos exigentes: e-commerce, gaming, medios audiovisuales y ciberseguridad." data-en="I'm a Site Reliability Engineer with 19+ years in systems operations, automation and cloud. I've grown from junior roles to technical leadership in demanding environments: e-commerce, gaming, media and cybersecurity.">
                         Soy Site Reliability Engineer con más de 19 años en operación de sistemas, automatización y cloud. He pasado de roles junior a liderazgo técnico en entornos exigentes: e-commerce, gaming, medios audiovisuales y ciberseguridad.
                     </p>
-                    <p class="about-description" data-es="Me centro en reducir fricción operativa combinando Terraform, Ansible y pipelines declarativos en Jenkins con agentes de IA que automatizan tareas repetitivas: generación y revisión de infraestructura como código, documentación de incidentes y contexto técnico en Jira/Confluence. Siempre con guardrails claros —nunca una acción destructiva sin revisión humana— y un ojo puesto en el coste y la seguridad de cada automatización." data-en="I focus on reducing operational friction by combining Terraform, Ansible and declarative Jenkins pipelines with AI agents that automate repetitive tasks: generating and reviewing infrastructure as code, documenting incidents and technical context in Jira/Confluence. Always with clear guardrails —never a destructive action without human review— and an eye on the cost and security of every automation.">
-                        Me centro en reducir fricción operativa combinando Terraform, Ansible y pipelines declarativos en Jenkins con agentes de IA que automatizan tareas repetitivas: generación y revisión de infraestructura como código, documentación de incidentes y contexto técnico en Jira/Confluence. Siempre con guardrails claros —nunca una acción destructiva sin revisión humana— y un ojo puesto en el coste y la seguridad de cada automatización.
+                    <p class="about-description" data-es="Combino Terraform, Ansible y pipelines declarativos en Jenkins con agentes de IA que automatizan documentación, revisión de infraestructura y contexto de incidentes —siempre con guardrails claros y revisión humana. Multi-cloud (AWS, Google Cloud, Azure), cultura ágil y formación técnica en la UPC y Monlau." data-en="I combine Terraform, Ansible and declarative Jenkins pipelines with AI agents that automate documentation, infrastructure review and incident context —always with clear guardrails and human review. Multi-cloud (AWS, Google Cloud, Azure), agile culture and technical teaching at UPC and Monlau.">
+                        Combino Terraform, Ansible y pipelines declarativos en Jenkins con agentes de IA que automatizan documentación, revisión de infraestructura y contexto de incidentes —siempre con guardrails claros y revisión humana. Multi-cloud (AWS, Google Cloud, Azure), cultura ágil y formación técnica en la UPC y Monlau.
                     </p>
-                    <p class="about-description" data-es="Multi-cloud (AWS, Google Cloud, Azure), observabilidad con Datadog y cultura ágil. He operado infraestructuras de alto tráfico, liderado equipos DevOps y formado talento en la UPC y Monlau. La docencia me obliga a clarificar lo complejo: útil también en incidentes, revisiones de arquitectura y al diseñar cómo la IA debe apoyar —sin sustituir— el criterio del ingeniero." data-en="Multi-cloud (AWS, Google Cloud, Azure), observability with Datadog and an agile culture. I've operated high-traffic infrastructures, led DevOps teams and developed talent at UPC and Monlau. Teaching forces me to clarify complexity—useful in incidents, architecture reviews and when designing how AI should support, not replace, engineering judgment.">
-                        Multi-cloud (AWS, Google Cloud, Azure), observabilidad con Datadog y cultura ágil. He operado infraestructuras de alto tráfico, liderado equipos DevOps y formado talento en la UPC y Monlau. La docencia me obliga a clarificar lo complejo: útil también en incidentes, revisiones de arquitectura y al diseñar cómo la IA debe apoyar —sin sustituir— el criterio del ingeniero.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">19+</span>
-                            <span class="stat-label" data-es="Años de Experiencia" data-en="Years Experience">Años de Experiencia</span>
+                    <div class="skill-bars" aria-label="Nivel de dominio autoevaluado">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label">
+                                <span data-es="IaC · Terraform &amp; Ansible" data-en="IaC · Terraform &amp; Ansible">IaC · Terraform &amp; Ansible</span>
+                                <span class="pct">95%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="95"></div></div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">13</span>
-                            <span class="stat-label" data-es="Empresas" data-en="Companies">Empresas</span>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label">
+                                <span data-es="IA & Agentes Autónomos" data-en="AI & Autonomous Agents">IA & Agentes Autónomos</span>
+                                <span class="pct">90%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="90"></div></div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label" data-es="Certificaciones" data-en="Certifications">Certificaciones</span>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label">
+                                <span data-es="AWS & Observabilidad (Datadog)" data-en="AWS & Observability (Datadog)">AWS & Observabilidad (Datadog)</span>
+                                <span class="pct">92%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="92"></div></div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">IA</span>
-                            <span class="stat-label" data-es="Automatización aumentada" data-en="AI-augmented automation">Automatización aumentada</span>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-label">
+                                <span data-es="Liderazgo & Formación Ágil" data-en="Leadership & Agile Training">Liderazgo & Formación Ágil</span>
+                                <span class="pct">88%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" data-percent="88"></div></div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <div class="stat-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
+                    <span class="stat-number">19+</span>
+                    <span class="stat-label" data-es="Años de Experiencia" data-en="Years Experience">Años de Experiencia</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+                    <span class="stat-number">13</span>
+                    <span class="stat-label" data-es="Empresas" data-en="Companies">Empresas</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
+                    <span class="stat-number">3</span>
+                    <span class="stat-label" data-es="Certificaciones" data-en="Certifications">Certificaciones</span>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+                    <span class="stat-number">IA</span>
+                    <span class="stat-label" data-es="Automatización aumentada" data-en="AI-augmented automation">Automatización aumentada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <span class="section-eyebrow" data-es="02 // Lo que aporto" data-en="02 // What I bring">02 // Lo que aporto</span>
+            <h2 class="section-title" data-es="Cómo puedo ayudarte" data-en="How I can help">Cómo puedo ayudarte</h2>
+            <div class="services-grid">
+                <div class="service-card card-purple" data-aos="fade-up">
+                    <div class="service-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+                    <h3 class="service-title" data-es="IA & Automatización" data-en="AI & Automation">IA & Automatización</h3>
+                    <p class="service-desc" data-es="Agentes de IA (Cursor, MCP) para acelerar IaC, documentación y triage de incidentes, siempre con guardrails y revisión humana." data-en="AI agents (Cursor, MCP) to speed up IaC, documentation and incident triage, always with guardrails and human review.">Agentes de IA (Cursor, MCP) para acelerar IaC, documentación y triage de incidentes, siempre con guardrails y revisión humana.</p>
+                </div>
+                <div class="service-card card-yellow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-cloud" aria-hidden="true"></i></div>
+                    <h3 class="service-title" data-es="Infraestructura Cloud" data-en="Cloud Infrastructure">Infraestructura Cloud</h3>
+                    <p class="service-desc" data-es="Terraform y Ansible para infraestructura reproducible en AWS, Google Cloud y Azure, con pipelines declarativos en Jenkins." data-en="Terraform and Ansible for reproducible infrastructure on AWS, Google Cloud and Azure, with declarative Jenkins pipelines.">Terraform y Ansible para infraestructura reproducible en AWS, Google Cloud y Azure, con pipelines declarativos en Jenkins.</p>
+                </div>
+                <div class="service-card card-pink" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                    <h3 class="service-title" data-es="Fiabilidad & Observabilidad" data-en="Reliability & Observability">Fiabilidad & Observabilidad</h3>
+                    <p class="service-desc" data-es="Monitorización con Datadog, gestión de incidentes y mejora continua para plataformas de alto tráfico en producción." data-en="Monitoring with Datadog, incident management and continuous improvement for high-traffic production platforms.">Monitorización con Datadog, gestión de incidentes y mejora continua para plataformas de alto tráfico en producción.</p>
+                </div>
+                <div class="service-card card-teal" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="fas fa-chalkboard-user" aria-hidden="true"></i></div>
+                    <h3 class="service-title" data-es="Liderazgo & Formación" data-en="Leadership & Training">Liderazgo & Formación</h3>
+                    <p class="service-desc" data-es="Scrum Master y formador de equipos DevOps/SRE en empresa y universidad, con foco en claridad y mentoría técnica." data-en="Scrum Master and trainer for DevOps/SRE teams in industry and academia, with a focus on clarity and technical mentoring.">Scrum Master y formador de equipos DevOps/SRE en empresa y universidad, con foco en claridad y mentoría técnica.</p>
                 </div>
             </div>
         </div>
@@ -203,7 +293,7 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <span class="section-eyebrow" data-es="02 // Experiencia" data-en="02 // Experience">02 // Experiencia</span>
+            <span class="section-eyebrow" data-es="03 // Experiencia" data-en="03 // Experience">03 // Experiencia</span>
             <h2 class="section-title" data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</h2>
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-up">
@@ -429,7 +519,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <span class="section-eyebrow" data-es="03 // Habilidades" data-en="03 // Skills">03 // Habilidades</span>
+            <span class="section-eyebrow" data-es="04 // Habilidades" data-en="04 // Skills">04 // Habilidades</span>
             <h2 class="section-title" data-es="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</h2>
             <div class="skills-grid">
                 <div class="skill-category" data-aos="fade-up">
@@ -508,7 +598,7 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <span class="section-eyebrow" data-es="04 // Formación" data-en="04 // Education">04 // Formación</span>
+            <span class="section-eyebrow" data-es="05 // Formación" data-en="05 // Education">05 // Formación</span>
             <h2 class="section-title" data-es="Formación Académica" data-en="Education">Formación Académica</h2>
             <div class="education-grid">
                 <div class="education-item" data-aos="fade-up">
@@ -584,7 +674,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <span class="section-eyebrow" data-es="05 // Contacto" data-en="05 // Contact">05 // Contacto</span>
+            <span class="section-eyebrow" data-es="06 // Contacto" data-en="06 // Contact">06 // Contacto</span>
             <h2 class="section-title" data-es="Hablemos" data-en="Let's Talk">Hablemos</h2>
             <p class="contact-subtitle" data-es="¿Colaboración técnica, mentoría o una posición SRE/DevOps con foco en IA y automatización? Escríbeme con contexto y objetivos." data-en="Technical collaboration, mentoring or an SRE/DevOps role focused on AI and automation? Write me with context and goals.">
                 ¿Colaboración técnica, mentoría o una posición SRE/DevOps con foco en IA y automatización? Escríbeme con contexto y objetivos.
