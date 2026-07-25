@@ -1188,8 +1188,9 @@ section {
 .skills { background: transparent; }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--spacing-md);
 }
 
@@ -1199,6 +1200,8 @@ section {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
+    flex: 1 1 280px;
+    max-width: 330px;
 }
 
 .skill-category:hover {
@@ -1552,7 +1555,7 @@ section {
 
 @media (max-width: 480px) {
     .about-stats { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: 1fr; }
+    .skill-category { flex-basis: 100%; max-width: 100%; }
     .btn { padding: 0.85rem 1.6rem; font-size: 0.9rem; }
 }
 
