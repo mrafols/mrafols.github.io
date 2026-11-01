@@ -581,16 +581,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==================== PWA Install Prompt ====================
 // Install prompt disabled
 
-// ==================== Service Worker Registration ====================
+// Drop any previously installed service worker. It intercepted every
+// request and kept a stale copy of the page after deploys.
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(err => {
-                console.log('ServiceWorker registration failed: ', err);
-            });
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+            registrations.forEach((registration) => registration.unregister());
+        });
     });
 }
 
