@@ -63,14 +63,28 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+// One scroll listener, one layout pass per frame.
+let scrollTick = false;
+
+function onScrollFrame() {
+    scrollTick = false;
+
+    if (navbar) {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
     }
-});
+    highlightActiveSection();
+    revealOnScroll();
+    updateScrollProgress();
+    if (!prefersReducedMotion() && !isMobileViewport()) {
+        updateHeroParallax();
+    }
+}
+
+window.addEventListener('scroll', () => {
+    if (scrollTick) return;
+    scrollTick = true;
+    requestAnimationFrame(onScrollFrame);
+}, { passive: true });
 
 // Mobile menu toggle
 hamburger.addEventListener('click', () => {
@@ -125,8 +139,6 @@ function highlightActiveSection() {
     });
 }
 
-window.addEventListener('scroll', highlightActiveSection);
-
 // ==================== Scroll Animations ====================
 function revealOnScroll() {
     const elements = document.querySelectorAll('[data-aos]');
@@ -173,7 +185,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
 // ==================== Parallax Effect ====================
@@ -191,7 +202,6 @@ function updateScrollProgress() {
     progressBar.style.width = percent + '%';
 }
 
-window.addEventListener('scroll', updateScrollProgress);
 window.addEventListener('load', updateScrollProgress);
 window.addEventListener('resize', updateScrollProgress);
 
@@ -217,10 +227,7 @@ function isMobileViewport() {
     return window.matchMedia('(max-width: 968px)').matches || window.matchMedia('(hover: none)').matches;
 }
 
-let parallaxTicking = false;
-
 function updateHeroParallax() {
-    parallaxTicking = false;
     if (prefersReducedMotion() || isMobileViewport()) return;
 
     const heroContent = document.querySelector('.hero-content');
@@ -239,14 +246,6 @@ function resetHeroParallax() {
         heroContent.style.opacity = '';
     }
 }
-
-window.addEventListener('scroll', () => {
-    if (isMobileViewport() || prefersReducedMotion()) return;
-    if (!parallaxTicking) {
-        parallaxTicking = true;
-        requestAnimationFrame(updateHeroParallax);
-    }
-}, { passive: true });
 
 window.addEventListener('resize', () => {
     if (isMobileViewport()) resetHeroParallax();
@@ -594,39 +593,6 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
-
-// ==================== Performance Optimization ====================
-// Lazy load images
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                observer.unobserve(img);
-            }
-        });
-    });
-    
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Preload critical assets
-const preloadLinks = [
-    '/assets/img/profile-img.jpg',
-    '/assets/img/hero-bg.jpg'
-];
-
-preloadLinks.forEach(href => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = href;
-    document.head.appendChild(link);
-});
 
 // ==================== Analytics (Placeholder) ====================
 function trackEvent(category, action, label) {

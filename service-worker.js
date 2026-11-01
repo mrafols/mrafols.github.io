@@ -1,14 +1,16 @@
-const CACHE_NAME = 'marc-rafols-portfolio-v1';
+const CACHE_NAME = 'marc-rafols-portfolio-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/styles.css',
   '/script.js',
   '/manifest.json',
-  '/assets/img/profile-img.jpg',
+  '/assets/fonts/inter-latin.woff2',
+  '/assets/fonts/firacode-latin.woff2',
+  '/assets/img/illustrated-avatar.webp',
   '/assets/img/hero-bg.jpg',
   '/assets/img/apple-touch-icon.png',
-  '/assets/img/favicon.png',
+  '/assets/img/favicon-32x32.png',
   '/assets/img/companies/hornetsecurity.png',
   '/assets/img/companies/leadtech-group.png',
   '/assets/img/companies/privalia.png',
@@ -55,37 +57,60 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch Strategy: Network First, fallback to Cache
+function isCacheable(response) {
+  return response && response.ok && response.type === 'basic';
+}
+
+// Documents: network first so content updates show up, with the cached page as fallback.
+async function networkFirst(request) {
+  const cache = await caches.open(CACHE_NAME);
+  try {
+    const response = await fetch(request);
+    if (isCacheable(response)) {
+      cache.put(request, response.clone());
+    }
+    return response;
+  } catch (err) {
+    const cached = await cache.match(request);
+    return cached || cache.match('/index.html');
+  }
+}
+
+// Static assets: serve the cached copy immediately and refresh it in the background.
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(CACHE_NAME);
+  const cached = await cache.match(request);
+  const network = fetch(request)
+    .then(response => {
+      if (isCacheable(response)) {
+        cache.put(request, response.clone());
+      }
+      return response;
+    })
+    .catch(() => cached);
+
+  return cached || network;
+}
+
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    fetch(event.request)
-      .then(response => {
-        // Clone the response
-        const responseClone = response.clone();
-        
-        // Cache the fetched response
-        caches.open(CACHE_NAME)
-          .then(cache => {
-            cache.put(event.request, responseClone);
-          });
-        
-        return response;
-      })
-      .catch(() => {
-        // Network failed, try cache
-        return caches.match(event.request)
-          .then(response => {
-            if (response) {
-              return response;
-            }
-            
-            // If no cache, return offline page
-            if (event.request.destination === 'document') {
-              return caches.match('/index.html');
-            }
-          });
-      })
-  );
+  const request = event.request;
+  if (request.method !== 'GET') return;
+
+  let url;
+  try {
+    url = new URL(request.url);
+  } catch (err) {
+    return;
+  }
+  // Leave fonts, analytics and other third parties to the browser.
+  if (url.origin !== self.location.origin) return;
+
+  if (request.mode === 'navigate' || request.destination === 'document') {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  event.respondWith(staleWhileRevalidate(request));
 });
 
 // Background Sync

@@ -36,7 +36,7 @@
   "screenshots": [
     {
       "src": "assets/img/hero-bg.jpg",
-      "sizes": "1280x720",
+      "sizes": "1600x1200",
       "type": "image/jpeg"
     }
   ],
