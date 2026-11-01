@@ -960,6 +960,9 @@ section {
 .about-avatar {
     width: 100%;
     max-width: 260px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     border: 6px solid #fff;
